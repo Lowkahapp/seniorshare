@@ -7,6 +7,7 @@ import { VerifiedBadge } from '@/components/senoshare/SenoshareCards'
 import { getDisplayName, useAuth } from '@/hooks/useAuth'
 
 const navLinks = [
+  { to: '/manifesto', label: 'Manifesto' },
   { to: '/how-it-works', label: 'How it works' },
   { to: '/for-families', label: 'For families' },
   { to: '/pricing', label: 'Pricing' },

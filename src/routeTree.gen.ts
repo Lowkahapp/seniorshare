@@ -14,6 +14,7 @@ import { Route as ProfileRouteImport } from './routes/profile'
 import { Route as PricingRouteImport } from './routes/pricing'
 import { Route as PartnersRouteImport } from './routes/partners'
 import { Route as OnboardingRouteImport } from './routes/onboarding'
+import { Route as ManifestoRouteImport } from './routes/manifesto'
 import { Route as LocationsRouteImport } from './routes/locations'
 import { Route as HowItWorksRouteImport } from './routes/how-it-works'
 import { Route as ForFamiliesRouteImport } from './routes/for-families'
@@ -44,6 +45,11 @@ const PartnersRoute = PartnersRouteImport.update({
 const OnboardingRoute = OnboardingRouteImport.update({
   id: '/onboarding',
   path: '/onboarding',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ManifestoRoute = ManifestoRouteImport.update({
+  id: '/manifesto',
+  path: '/manifesto',
   getParentRoute: () => rootRouteImport,
 } as any)
 const LocationsRoute = LocationsRouteImport.update({
@@ -82,6 +88,7 @@ export interface FileRoutesByFullPath {
   '/for-families': typeof ForFamiliesRoute
   '/how-it-works': typeof HowItWorksRoute
   '/locations': typeof LocationsRoute
+  '/manifesto': typeof ManifestoRoute
   '/onboarding': typeof OnboardingRoute
   '/partners': typeof PartnersRoute
   '/pricing': typeof PricingRoute
@@ -95,6 +102,7 @@ export interface FileRoutesByTo {
   '/for-families': typeof ForFamiliesRoute
   '/how-it-works': typeof HowItWorksRoute
   '/locations': typeof LocationsRoute
+  '/manifesto': typeof ManifestoRoute
   '/onboarding': typeof OnboardingRoute
   '/partners': typeof PartnersRoute
   '/pricing': typeof PricingRoute
@@ -109,6 +117,7 @@ export interface FileRoutesById {
   '/for-families': typeof ForFamiliesRoute
   '/how-it-works': typeof HowItWorksRoute
   '/locations': typeof LocationsRoute
+  '/manifesto': typeof ManifestoRoute
   '/onboarding': typeof OnboardingRoute
   '/partners': typeof PartnersRoute
   '/pricing': typeof PricingRoute
@@ -124,6 +133,7 @@ export interface FileRouteTypes {
     | '/for-families'
     | '/how-it-works'
     | '/locations'
+    | '/manifesto'
     | '/onboarding'
     | '/partners'
     | '/pricing'
@@ -137,6 +147,7 @@ export interface FileRouteTypes {
     | '/for-families'
     | '/how-it-works'
     | '/locations'
+    | '/manifesto'
     | '/onboarding'
     | '/partners'
     | '/pricing'
@@ -150,6 +161,7 @@ export interface FileRouteTypes {
     | '/for-families'
     | '/how-it-works'
     | '/locations'
+    | '/manifesto'
     | '/onboarding'
     | '/partners'
     | '/pricing'
@@ -164,6 +176,7 @@ export interface RootRouteChildren {
   ForFamiliesRoute: typeof ForFamiliesRoute
   HowItWorksRoute: typeof HowItWorksRoute
   LocationsRoute: typeof LocationsRoute
+  ManifestoRoute: typeof ManifestoRoute
   OnboardingRoute: typeof OnboardingRoute
   PartnersRoute: typeof PartnersRoute
   PricingRoute: typeof PricingRoute
@@ -208,6 +221,13 @@ declare module '@tanstack/react-router' {
       path: '/onboarding'
       fullPath: '/onboarding'
       preLoaderRoute: typeof OnboardingRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/manifesto': {
+      id: '/manifesto'
+      path: '/manifesto'
+      fullPath: '/manifesto'
+      preLoaderRoute: typeof ManifestoRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/locations': {
@@ -260,6 +280,7 @@ const rootRouteChildren: RootRouteChildren = {
   ForFamiliesRoute: ForFamiliesRoute,
   HowItWorksRoute: HowItWorksRoute,
   LocationsRoute: LocationsRoute,
+  ManifestoRoute: ManifestoRoute,
   OnboardingRoute: OnboardingRoute,
   PartnersRoute: PartnersRoute,
   PricingRoute: PricingRoute,

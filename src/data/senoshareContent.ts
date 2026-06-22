@@ -85,6 +85,7 @@ export const sampleMatch = {
 }
 
 export const footerResources = [
+  { label: 'Manifesto', to: '/manifesto' },
   { label: 'For families', to: '/for-families' },
   { label: 'After your match', to: '/how-it-works#after-match' },
   { label: 'Pricing', to: '/pricing' },
