@@ -361,9 +361,21 @@ h2.display-title {
 
 .steps-grid {
   display: grid;
-  align-items: stretch;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 2.5rem 2rem;
+  align-items: start;
+  gap: 2rem 1.5rem;
+  grid-template-columns: 1fr;
+}
+
+@media (min-width: 640px) {
+  .steps-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (min-width: 1024px) {
+  .steps-grid {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
 }
 
 .card-grid {
