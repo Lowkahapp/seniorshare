@@ -342,9 +342,9 @@ h2.display-title {
   transition: border-color 180ms ease, box-shadow 180ms ease, background-color 180ms ease;
 }
 
-.demo-input,
-.demo-select {
-  padding: 0.7rem 0.9rem;
+.demo-input::placeholder {
+  color: var(--sea-ink-soft);
+  opacity: 1;
 }
 
 .demo-input-fit {

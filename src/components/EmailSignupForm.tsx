@@ -33,7 +33,7 @@ export function EmailSignupForm({
           onChange={(e) => setEmail(e.target.value)}
           placeholder="Enter your email address"
           required
-          className="min-h-12 flex-1 text-base"
+          className="min-h-12 flex-1 text-base placeholder:text-[var(--sea-ink-soft)] placeholder:opacity-100"
           aria-label="Email address"
         />
         <Button type="submit" variant={buttonVariant} size="lg" className="min-h-12 shrink-0">

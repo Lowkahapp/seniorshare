@@ -39,7 +39,7 @@ function SupportPage() {
             <a href="mailto:support@senoshare.com" className="font-semibold">
               support@senoshare.com
             </a>{' '}
-            and a Senoshare advocate will respond within one business day.
+            and a SenoShare advocate will respond within one business day.
           </p>
         </article>
       </section>

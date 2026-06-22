@@ -20,7 +20,7 @@ function FaqPage() {
           Your questions, answered honestly.
         </h1>
         <p className="text-base leading-relaxed text-[var(--sea-ink-soft)] sm:text-lg">
-          No jargon. No runaround. Just straight answers about how Senoshare
+          No jargon. No runaround. Just straight answers about how SenoShare
           works and what to expect.
         </p>
       </section>

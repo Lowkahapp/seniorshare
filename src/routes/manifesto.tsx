@@ -14,7 +14,7 @@ function ManifestoPage() {
   return (
     <main className="page-wrap px-4 pb-8 pt-14">
       <PageHero
-        kicker="The Senoshare Manifesto"
+        kicker="The SenoShare Manifesto"
         title="Aging in place should not mean aging in isolation."
       />
 
@@ -37,7 +37,7 @@ function ManifestoPage() {
             or too lonely.
           </p>
           <p className="text-lg font-semibold text-[var(--sea-ink)]">
-            Senoshare unlocks the value already sitting within our neighborhoods
+            SenoShare unlocks the value already sitting within our neighborhoods
             and puts the power back into the hands of the people who earned it.
           </p>
         </div>
@@ -77,10 +77,10 @@ function ManifestoPage() {
         </div>
       </section>
 
-      {/* What Senoshare is — and isn't */}
+      {/* What SenoShare is — and isn't */}
       <section className="island-shell mt-12 rounded-[2rem] px-6 py-10 sm:px-10 sm:py-12">
         <h2 className="display-title mb-6 text-2xl font-bold text-[var(--sea-ink)] sm:text-3xl">
-          What Senoshare is — and isn&apos;t
+          What SenoShare is — and isn&apos;t
         </h2>
         <ul className="m-0 max-w-3xl space-y-4 pl-5 text-base leading-relaxed text-[var(--sea-ink-soft)] sm:text-lg">
           {manifestoIsNot.map((item) => (

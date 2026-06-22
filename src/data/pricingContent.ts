@@ -49,12 +49,12 @@ export const pricingPlans: PricingPlan[] = [
   {
     id: 'full-support',
     name: 'Full Support',
-    tagline: 'Hands-on guidance from a Senoshare advocate.',
+    tagline: 'Hands-on guidance from a SenoShare advocate.',
     price: '$49',
     priceNote: 'per month',
     features: [
       'Everything in Verified Member',
-      'Mediated video intro call with a Senoshare advocate',
+      'Mediated video intro call with a SenoShare advocate',
       'Personalized match recommendations',
       'Co-living agreement drafting assistance',
       'Priority 24/7 phone support',
@@ -95,12 +95,12 @@ export const pricingFaqs = [
     id: 'benefits-impact',
     question: 'Does the price affect my Social Security or benefits?',
     answer:
-      'Senoshare membership fees are a personal expense and generally do not affect Social Security income. However, any rent or cost-sharing arrangements you enter into may have implications depending on your benefit programs. We recommend speaking with a benefits advisor.',
+      'SenoShare membership fees are a personal expense and generally do not affect Social Security income. However, any rent or cost-sharing arrangements you enter into may have implications depending on your benefit programs. We recommend speaking with a benefits advisor.',
   },
   {
     id: 'advocates',
-    question: 'Who are the Senoshare advocates?',
+    question: 'Who are the SenoShare advocates?',
     answer:
-      'Advocates are trained Senoshare staff — not bots — who facilitate introductions, help draft agreements, and are available around the clock for safety concerns or disputes.',
+      'Advocates are trained SenoShare staff — not bots — who facilitate introductions, help draft agreements, and are available around the clock for safety concerns or disputes.',
   },
 ] as const

@@ -45,7 +45,7 @@ function ForFamiliesPage() {
         </h2>
         <ul className="m-0 space-y-3 pl-5 text-base text-[var(--sea-ink-soft)]">
           <li>Every member passes identity verification and background screening.</li>
-          <li>Introductions are mediated by a Senoshare advocate before anyone meets in person.</li>
+          <li>Introductions are mediated by a SenoShare advocate before anyone meets in person.</li>
           <li>Co-living agreements are written with legal guardrails before move-in.</li>
           <li>24/7 support is available for safety concerns at any stage.</li>
         </ul>

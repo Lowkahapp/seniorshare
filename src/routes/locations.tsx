@@ -15,7 +15,7 @@ function LocationsPage() {
           Find your match, close to home.
         </h1>
         <p className="text-base leading-relaxed text-[var(--sea-ink-soft)] sm:text-lg">
-          Senoshare is growing city by city. See where we&apos;re active — and
+          SenoShare is growing city by city. See where we&apos;re active — and
           join the waitlist if we&apos;re not in your area yet.
         </p>
       </section>
@@ -37,7 +37,7 @@ function LocationsPage() {
         </h2>
         <p className="mb-8 text-base text-[var(--sea-ink-soft)]">
           We&apos;re expanding monthly. Drop your zip code and we&apos;ll notify
-          you the moment Senoshare launches near you.
+          you the moment SenoShare launches near you.
         </p>
         <WaitlistForm />
       </section>

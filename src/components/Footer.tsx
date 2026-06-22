@@ -10,7 +10,7 @@ export default function Footer() {
       <div className="page-wrap">
         <div className="mb-8 grid gap-8 sm:grid-cols-3">
           <div>
-            <p className="island-kicker mb-2">Senoshare</p>
+            <p className="island-kicker mb-2">SenoShare</p>
             <p className="m-0 text-sm leading-relaxed">
               Secure home sharing for active older adults.
             </p>
@@ -47,7 +47,7 @@ export default function Footer() {
 
         <div className="flex flex-col items-center justify-between gap-4 border-t border-[var(--line)] pt-8 text-center sm:flex-row sm:text-left">
           <p className="m-0 text-sm">
-            &copy; {year} Senoshare. Built with care for older adults.
+            &copy; {year} SenoShare. Built with care for older adults.
           </p>
         </div>
       </div>

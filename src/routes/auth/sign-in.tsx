@@ -47,7 +47,7 @@ function SignInPage() {
         <PageHero
         kicker="Sign in"
         title="Welcome back, member"
-        description="Sign in to continue your profile, review matches, and connect with your Senoshare advocate."
+        description="Sign in to continue your profile, review matches, and connect with your SenoShare advocate."
         />
 
         <form

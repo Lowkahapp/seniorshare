@@ -12,7 +12,7 @@ export const trustPillars = [
   {
     title: 'Guided introductions',
     description:
-      'We schedule mediated video calls before any in-person visit, with a trained Senoshare advocate on the line.',
+      'We schedule mediated video calls before any in-person visit, with a trained SenoShare advocate on the line.',
   },
   {
     title: 'Private by default',
@@ -83,7 +83,7 @@ export const sampleMembers = [
 
 export const sampleMatch = {
   title: 'Mediated intro scheduled',
-  description: 'Video call with a Senoshare advocate · Tuesday 10am',
+  description: 'Video call with a SenoShare advocate · Tuesday 10am',
 }
 
 export const footerResources = [

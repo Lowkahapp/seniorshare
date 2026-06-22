@@ -20,7 +20,7 @@ export function WaitlistForm() {
   if (submitted) {
     return (
       <div className="demo-alert text-base">
-        You&apos;re on the waitlist. We&apos;ll notify you when Senoshare launches
+        You&apos;re on the waitlist. We&apos;ll notify you when SenoShare launches
         near {form.zip || 'your area'}.
       </div>
     )

@@ -36,8 +36,8 @@ export function HeroSection() {
   return (
     <>
       <section className="hero-shell hero-shell-pro overflow-hidden rounded-xl border border-[var(--line)] bg-white px-6 py-10 sm:px-10 sm:py-12 lg:px-12">
-        <div className="grid items-start gap-10 lg:grid-cols-2 lg:gap-12">
-          <div className="max-w-xl">
+        <div className="grid items-start gap-10 lg:grid-cols-[minmax(0,1fr)_minmax(0,420px)] lg:gap-10 xl:grid-cols-2 xl:gap-12">
+          <div className="flex max-w-xl flex-col">
             <div className="mb-5 flex flex-wrap items-center gap-3">
               <VerifiedBadge />
               <span className="island-kicker m-0">Verified members only</span>
@@ -74,9 +74,30 @@ export function HeroSection() {
                 <Link to="/pricing">View pricing</Link>
               </Button>
             </div>
+
+            <div className="mt-8 grid gap-3 border-t border-[var(--line)] pt-6 sm:grid-cols-3">
+              {trustStats.map(({ icon: Icon, value, label }) => (
+                <div
+                  key={label}
+                  className="hero-stat-card flex items-center gap-3 rounded-lg p-3 sm:flex-col sm:items-start sm:p-4 lg:flex-row lg:items-center"
+                >
+                  <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg bg-white">
+                    <Icon className="h-4 w-4 text-[var(--lagoon-deep)]" />
+                  </div>
+                  <div className="min-w-0">
+                    <p className="text-lg font-bold tracking-tight whitespace-nowrap text-[var(--sea-ink)]">
+                      {value}
+                    </p>
+                    <p className="mt-0.5 text-xs leading-snug text-[var(--sea-ink-soft)] sm:text-sm">
+                      {label}
+                    </p>
+                  </div>
+                </div>
+              ))}
+            </div>
           </div>
 
-          <div className="hero-visual-panel rounded-xl border border-[var(--line)] bg-[var(--lagoon-light)] p-3 sm:p-4">
+          <div className="hero-visual-panel rounded-xl border border-[var(--line)] bg-[var(--lagoon-light)] p-3 sm:p-4 lg:sticky lg:top-24 lg:self-start">
             <div className="overflow-hidden rounded-lg border border-[var(--line)]">
               <img
                 src={heroImages.home}
@@ -97,27 +118,6 @@ export function HeroSection() {
               />
             </div>
           </div>
-        </div>
-
-        <div className="mt-10 grid gap-4 border-t border-[var(--line)] pt-8 sm:grid-cols-3">
-          {trustStats.map(({ icon: Icon, value, label }) => (
-            <div
-              key={label}
-              className="hero-stat-card flex items-center gap-4 rounded-lg p-4"
-            >
-              <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-lg bg-white">
-                <Icon className="h-5 w-5 text-[var(--lagoon-deep)]" />
-              </div>
-              <div className="min-w-0">
-                <p className="text-xl font-bold tracking-tight whitespace-nowrap text-[var(--sea-ink)]">
-                  {value}
-                </p>
-                <p className="mt-0.5 text-sm text-[var(--sea-ink-soft)]">
-                  {label}
-                </p>
-              </div>
-            </div>
-          ))}
         </div>
       </section>
 

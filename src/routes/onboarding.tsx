@@ -77,7 +77,7 @@ function OnboardingPage() {
           </h1>
           <p className="mb-8 text-base text-[var(--sea-ink-soft)]">
             Next, you&apos;ll complete identity verification and background
-            screening. A Senoshare advocate will reach out within one business
+            screening. A SenoShare advocate will reach out within one business
             day to guide you through the rest.
           </p>
           <Button asChild size="lg">

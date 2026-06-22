@@ -32,7 +32,7 @@ function HowItWorksPage() {
         </h2>
         <div className="grid gap-4 sm:grid-cols-2">
           {[
-            'Welcome call with your Senoshare advocate',
+            'Welcome call with your SenoShare advocate',
             'Draft a written co-living agreement together',
             'Plan a gradual introduction timeline',
             'Ongoing check-ins for the first 90 days',

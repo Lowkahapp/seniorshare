@@ -29,12 +29,12 @@ function HomePage() {
             Six layers between you and a stranger.
           </h2>
           <p className="body-readable text-base text-[var(--sea-ink-soft)] sm:text-lg">
-            We built Senoshare specifically for older adults. Every part of the
+            We built SenoShare specifically for older adults. Every part of the
             experience is designed to keep you safe, in control, and never
             rushed.
           </p>
         </div>
-        <div className="card-grid gap-4">
+        <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
           {trustPillars.map((pillar, index) => (
             <TrustPillar key={pillar.title} {...pillar} index={index} />
           ))}
@@ -44,7 +44,7 @@ function HomePage() {
       <section className="page-section" id="how-it-works">
         <div className="mb-10 flex flex-wrap items-end justify-between gap-4">
           <div>
-            <p className="island-kicker mb-2">How Senoshare works</p>
+            <p className="island-kicker mb-2">How SenoShare works</p>
             <h2 className="display-title text-3xl font-bold leading-[1.15] text-[var(--sea-ink)] sm:text-4xl">
               From profile to partnership
             </h2>
@@ -70,7 +70,7 @@ function HomePage() {
             Our onboarding wizard walks you through it, one question at a time.
           </p>
           <Button variant="primary" asChild size="lg">
-            <Link to="/onboarding">Begin onboarding</Link>
+            <Link to="/onboarding">Create Your Profile</Link>
           </Button>
         </div>
       </section>
