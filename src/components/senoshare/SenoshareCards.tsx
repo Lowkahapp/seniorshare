@@ -1,7 +1,7 @@
 import { BadgeCheck, Shield } from 'lucide-react'
 
 import { Badge } from '@/components/ui/badge'
-import { Avatar, AvatarFallback } from '@/components/ui/avatar'
+import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar'
 import { cn } from '@/lib/utils'
 
 export function VerifiedBadge({ className }: { className?: string }) {
@@ -19,6 +19,8 @@ type MemberCardProps = {
   role: string
   details: string
   initials: string
+  photoUrl?: string
+  compact?: boolean
 }
 
 export function MemberCard({
@@ -27,12 +29,20 @@ export function MemberCard({
   role,
   details,
   initials,
+  photoUrl,
+  compact = false,
 }: MemberCardProps) {
   return (
-    <article className="island-shell feature-card rounded-2xl p-5">
-      <div className="mb-4 flex items-start justify-between gap-3">
+    <article
+      className={cn(
+        'hero-member-card rounded-2xl border border-[var(--line)] bg-white p-4 shadow-[0_8px_24px_rgba(23,58,64,0.06)]',
+        !compact && 'island-shell feature-card p-5',
+      )}
+    >
+      <div className="mb-3 flex items-start justify-between gap-3">
         <div className="flex items-center gap-3">
-          <Avatar className="h-12 w-12">
+          <Avatar className={cn(compact ? 'h-11 w-11' : 'h-12 w-12')}>
+            {photoUrl ? <AvatarImage src={photoUrl} alt={name} /> : null}
             <AvatarFallback>{initials}</AvatarFallback>
           </Avatar>
           <div>
@@ -56,7 +66,7 @@ export function MatchCard({
   description: string
 }) {
   return (
-    <article className="island-shell rounded-2xl border-2 border-[rgba(79,184,178,0.35)] bg-[rgba(79,184,178,0.08)] p-5">
+    <article className="hero-member-card rounded-2xl border border-[rgba(79,184,178,0.35)] bg-white p-4 shadow-[0_8px_24px_rgba(23,58,64,0.06)]">
       <div className="mb-3 flex items-center gap-2">
         <div className="flex h-8 w-8 items-center justify-center rounded-full bg-[rgba(79,184,178,0.2)]">
           <Shield className="h-4 w-4 text-[var(--lagoon-deep)]" />

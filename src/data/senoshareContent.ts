@@ -66,6 +66,7 @@ export const sampleMembers = [
     role: 'Home Provider',
     details: '2 bedrooms · Loves gardening',
     initials: 'M',
+    photoUrl: '/images/hero/margaret.jpg',
     verified: true,
   },
   {
@@ -75,6 +76,7 @@ export const sampleMembers = [
     role: 'Home Seeker',
     details: 'Early bird · Quiet evenings',
     initials: 'R',
+    photoUrl: '/images/hero/robert.jpg',
     verified: true,
   },
 ] as const

@@ -8,11 +8,13 @@ import { Input } from '@/components/ui/input'
 type EmailSignupFormProps = {
   buttonLabel?: string
   className?: string
+  buttonVariant?: 'default' | 'primary'
 }
 
 export function EmailSignupForm({
   buttonLabel = 'Find Your Perfect Match',
   className,
+  buttonVariant = 'primary',
 }: EmailSignupFormProps) {
   const [email, setEmail] = useState('')
 
@@ -34,7 +36,7 @@ export function EmailSignupForm({
           className="min-h-12 flex-1 text-base"
           aria-label="Email address"
         />
-        <Button type="submit" size="lg" className="min-h-12 shrink-0">
+        <Button type="submit" variant={buttonVariant} size="lg" className="min-h-12 shrink-0">
           {buttonLabel}
           <ArrowRight className="h-4 w-4" />
         </Button>

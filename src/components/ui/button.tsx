@@ -11,6 +11,8 @@ const buttonVariants = cva(
       variant: {
         default:
           'border border-[rgba(50,143,151,0.3)] bg-[rgba(79,184,178,0.14)] text-[var(--lagoon-deep)] hover:-translate-y-0.5 hover:bg-[rgba(79,184,178,0.24)]',
+        primary:
+          'border border-[var(--sea-ink)] bg-[var(--sea-ink)] text-white hover:-translate-y-0.5 hover:bg-[#1f4d55]',
         secondary:
           'border border-[rgba(23,58,64,0.2)] bg-white/50 text-[var(--sea-ink)] hover:-translate-y-0.5 hover:border-[rgba(23,58,64,0.35)]',
         ghost:
