@@ -45,9 +45,9 @@ function SignInPage() {
     <main className="page-wrap px-4 pb-8 pt-14">
       <div className="mx-auto max-w-md">
         <PageHero
-          kicker="Sign in"
-          title="Welcome back"
-          description="Sign in to share stories, join groups, and message family and friends."
+        kicker="Sign in"
+        title="Welcome back, member"
+        description="Sign in to continue your profile, review matches, and connect with your Senoshare advocate."
         />
 
         <form

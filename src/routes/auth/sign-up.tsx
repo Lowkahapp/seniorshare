@@ -50,9 +50,9 @@ function SignUpPage() {
     <main className="page-wrap px-4 pb-8 pt-14">
       <div className="mx-auto max-w-md">
         <PageHero
-          kicker="Join free"
-          title="Create your SeniorShare account"
-          description="A simple account unlocks story sharing, community groups, and private messages."
+        kicker="Join SenoShare"
+        title="Create your member account"
+        description="Free to browse. Identity verification is required before any match."
         />
 
         <form

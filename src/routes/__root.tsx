@@ -22,12 +22,12 @@ export const Route = createRootRoute({
         content: 'width=device-width, initial-scale=1',
       },
       {
-        title: 'SeniorShare — Share your stories, connect with community',
+        title: 'SenoShare — Secure home sharing for active older adults',
       },
       {
         name: 'description',
         content:
-          'A welcoming platform for seniors to share wisdom, connect with community, and stay close to family.',
+          'A secure, high-trust matching ecosystem connecting active older adults to share homes, pool resources, and build companionship—with rigorous vetting and legal guardrails.',
       },
     ],
     links: [{ rel: 'stylesheet', href: appCss }],

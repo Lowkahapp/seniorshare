@@ -1,83 +1,39 @@
-# SeniorShare
+# SenoShare
 
-A welcoming platform for seniors to share wisdom, connect with community, and stay close to family.
+Secure home sharing for active older adults. SenoShare is a high-trust matching ecosystem that connects home providers and seekers—with identity verification, background screening, mediated introductions, and written co-living agreements.
 
 Built with [TanStack Start](https://tanstack.com/start), React 19, Tailwind CSS 4, and Supabase.
 
 ## Getting Started
 
-### Prerequisites
-
-- Node.js 20+
-- npm
-
-### Setup
-
-1. Install dependencies:
-
 ```bash
 npm install
-```
-
-2. Copy the environment template and add your Supabase credentials:
-
-```bash
 cp .env.example .env
-```
-
-3. Start the development server:
-
-```bash
 npm run dev
 ```
 
-The app runs at [http://localhost:3000](http://localhost:3000).
+Runs at [http://localhost:3000](http://localhost:3000).
 
-## Scripts
+## Pages
 
-| Command | Description |
+| Route | Description |
 | --- | --- |
-| `npm run dev` | Start development server |
-| `npm run build` | Production build |
-| `npm run preview` | Preview production build |
-| `npm run lint` | Run ESLint |
-| `npm run format` | Format code with Prettier |
+| `/` | Landing page with trust framework and matching CTA |
+| `/for-families` | Guide for adult children researching for a parent |
+| `/how-it-works` | Full matching process and safety layers |
+| `/onboarding` | Step-by-step profile wizard |
+| `/pricing` | Browse free, verified member plans |
+| `/support` | 24/7 member support contact |
+| `/locations` | Active and upcoming cities |
+| `/profile` | Member dashboard (auth required) |
 
 ## Deploy to Vercel
 
-This app uses the Nitro `vercel` preset and outputs to `.vercel/output` (Build Output API).
-
-1. Push the repo to GitHub and import it in [Vercel](https://vercel.com/new).
-2. Vercel reads `vercel.json` automatically — no extra framework detection needed.
-3. Add environment variables in the Vercel project settings:
+1. Import the repo at [vercel.com/new](https://vercel.com/new)
+2. Add environment variables:
    - `VITE_SUPABASE_URL`
    - `VITE_SUPABASE_PUBLISHABLE_KEY`
    - `VITE_SUPABASE_PROJECT_ID`
-
-Or deploy from the CLI:
-
-```bash
-npx vercel
-```
-
-## Project Structure
-
-```
-src/
-├── components/     # Shared UI components
-├── integrations/ # Supabase and external services
-├── lib/          # Utilities
-├── routes/       # File-based routes (TanStack Router)
-└── styles.css    # Global styles and design tokens
-```
-
-## Environment Variables
-
-| Variable | Description |
-| --- | --- |
-| `VITE_SUPABASE_URL` | Your Supabase project URL |
-| `VITE_SUPABASE_PUBLISHABLE_KEY` | Supabase publishable (anon) key |
-| `VITE_SUPABASE_PROJECT_ID` | Supabase project ID |
 
 ## License
 

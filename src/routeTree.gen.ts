@@ -9,55 +9,61 @@
 // Additionally, you should also exclude this file from your linter and/or formatter to prevent it from being checked or modified.
 
 import { Route as rootRouteImport } from './routes/__root'
+import { Route as SupportRouteImport } from './routes/support'
 import { Route as ProfileRouteImport } from './routes/profile'
-import { Route as MessagesRouteImport } from './routes/messages'
-import { Route as CommunityRouteImport } from './routes/community'
-import { Route as AboutRouteImport } from './routes/about'
+import { Route as PricingRouteImport } from './routes/pricing'
+import { Route as PartnersRouteImport } from './routes/partners'
+import { Route as OnboardingRouteImport } from './routes/onboarding'
+import { Route as LocationsRouteImport } from './routes/locations'
+import { Route as HowItWorksRouteImport } from './routes/how-it-works'
+import { Route as ForFamiliesRouteImport } from './routes/for-families'
 import { Route as IndexRouteImport } from './routes/index'
-import { Route as StoriesIndexRouteImport } from './routes/stories/index'
-import { Route as StoriesNewRouteImport } from './routes/stories/new'
-import { Route as StoriesStoryIdRouteImport } from './routes/stories/$storyId'
 import { Route as AuthSignUpRouteImport } from './routes/auth/sign-up'
 import { Route as AuthSignInRouteImport } from './routes/auth/sign-in'
 
+const SupportRoute = SupportRouteImport.update({
+  id: '/support',
+  path: '/support',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const ProfileRoute = ProfileRouteImport.update({
   id: '/profile',
   path: '/profile',
   getParentRoute: () => rootRouteImport,
 } as any)
-const MessagesRoute = MessagesRouteImport.update({
-  id: '/messages',
-  path: '/messages',
+const PricingRoute = PricingRouteImport.update({
+  id: '/pricing',
+  path: '/pricing',
   getParentRoute: () => rootRouteImport,
 } as any)
-const CommunityRoute = CommunityRouteImport.update({
-  id: '/community',
-  path: '/community',
+const PartnersRoute = PartnersRouteImport.update({
+  id: '/partners',
+  path: '/partners',
   getParentRoute: () => rootRouteImport,
 } as any)
-const AboutRoute = AboutRouteImport.update({
-  id: '/about',
-  path: '/about',
+const OnboardingRoute = OnboardingRouteImport.update({
+  id: '/onboarding',
+  path: '/onboarding',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const LocationsRoute = LocationsRouteImport.update({
+  id: '/locations',
+  path: '/locations',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const HowItWorksRoute = HowItWorksRouteImport.update({
+  id: '/how-it-works',
+  path: '/how-it-works',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ForFamiliesRoute = ForFamiliesRouteImport.update({
+  id: '/for-families',
+  path: '/for-families',
   getParentRoute: () => rootRouteImport,
 } as any)
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const StoriesIndexRoute = StoriesIndexRouteImport.update({
-  id: '/stories/',
-  path: '/stories/',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const StoriesNewRoute = StoriesNewRouteImport.update({
-  id: '/stories/new',
-  path: '/stories/new',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const StoriesStoryIdRoute = StoriesStoryIdRouteImport.update({
-  id: '/stories/$storyId',
-  path: '/stories/$storyId',
   getParentRoute: () => rootRouteImport,
 } as any)
 const AuthSignUpRoute = AuthSignUpRouteImport.update({
@@ -73,95 +79,109 @@ const AuthSignInRoute = AuthSignInRouteImport.update({
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
-  '/about': typeof AboutRoute
-  '/community': typeof CommunityRoute
-  '/messages': typeof MessagesRoute
+  '/for-families': typeof ForFamiliesRoute
+  '/how-it-works': typeof HowItWorksRoute
+  '/locations': typeof LocationsRoute
+  '/onboarding': typeof OnboardingRoute
+  '/partners': typeof PartnersRoute
+  '/pricing': typeof PricingRoute
   '/profile': typeof ProfileRoute
+  '/support': typeof SupportRoute
   '/auth/sign-in': typeof AuthSignInRoute
   '/auth/sign-up': typeof AuthSignUpRoute
-  '/stories/$storyId': typeof StoriesStoryIdRoute
-  '/stories/new': typeof StoriesNewRoute
-  '/stories/': typeof StoriesIndexRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
-  '/about': typeof AboutRoute
-  '/community': typeof CommunityRoute
-  '/messages': typeof MessagesRoute
+  '/for-families': typeof ForFamiliesRoute
+  '/how-it-works': typeof HowItWorksRoute
+  '/locations': typeof LocationsRoute
+  '/onboarding': typeof OnboardingRoute
+  '/partners': typeof PartnersRoute
+  '/pricing': typeof PricingRoute
   '/profile': typeof ProfileRoute
+  '/support': typeof SupportRoute
   '/auth/sign-in': typeof AuthSignInRoute
   '/auth/sign-up': typeof AuthSignUpRoute
-  '/stories/$storyId': typeof StoriesStoryIdRoute
-  '/stories/new': typeof StoriesNewRoute
-  '/stories': typeof StoriesIndexRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
-  '/about': typeof AboutRoute
-  '/community': typeof CommunityRoute
-  '/messages': typeof MessagesRoute
+  '/for-families': typeof ForFamiliesRoute
+  '/how-it-works': typeof HowItWorksRoute
+  '/locations': typeof LocationsRoute
+  '/onboarding': typeof OnboardingRoute
+  '/partners': typeof PartnersRoute
+  '/pricing': typeof PricingRoute
   '/profile': typeof ProfileRoute
+  '/support': typeof SupportRoute
   '/auth/sign-in': typeof AuthSignInRoute
   '/auth/sign-up': typeof AuthSignUpRoute
-  '/stories/$storyId': typeof StoriesStoryIdRoute
-  '/stories/new': typeof StoriesNewRoute
-  '/stories/': typeof StoriesIndexRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
   fullPaths:
     | '/'
-    | '/about'
-    | '/community'
-    | '/messages'
+    | '/for-families'
+    | '/how-it-works'
+    | '/locations'
+    | '/onboarding'
+    | '/partners'
+    | '/pricing'
     | '/profile'
+    | '/support'
     | '/auth/sign-in'
     | '/auth/sign-up'
-    | '/stories/$storyId'
-    | '/stories/new'
-    | '/stories/'
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
-    | '/about'
-    | '/community'
-    | '/messages'
+    | '/for-families'
+    | '/how-it-works'
+    | '/locations'
+    | '/onboarding'
+    | '/partners'
+    | '/pricing'
     | '/profile'
+    | '/support'
     | '/auth/sign-in'
     | '/auth/sign-up'
-    | '/stories/$storyId'
-    | '/stories/new'
-    | '/stories'
   id:
     | '__root__'
     | '/'
-    | '/about'
-    | '/community'
-    | '/messages'
+    | '/for-families'
+    | '/how-it-works'
+    | '/locations'
+    | '/onboarding'
+    | '/partners'
+    | '/pricing'
     | '/profile'
+    | '/support'
     | '/auth/sign-in'
     | '/auth/sign-up'
-    | '/stories/$storyId'
-    | '/stories/new'
-    | '/stories/'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
-  AboutRoute: typeof AboutRoute
-  CommunityRoute: typeof CommunityRoute
-  MessagesRoute: typeof MessagesRoute
+  ForFamiliesRoute: typeof ForFamiliesRoute
+  HowItWorksRoute: typeof HowItWorksRoute
+  LocationsRoute: typeof LocationsRoute
+  OnboardingRoute: typeof OnboardingRoute
+  PartnersRoute: typeof PartnersRoute
+  PricingRoute: typeof PricingRoute
   ProfileRoute: typeof ProfileRoute
+  SupportRoute: typeof SupportRoute
   AuthSignInRoute: typeof AuthSignInRoute
   AuthSignUpRoute: typeof AuthSignUpRoute
-  StoriesStoryIdRoute: typeof StoriesStoryIdRoute
-  StoriesNewRoute: typeof StoriesNewRoute
-  StoriesIndexRoute: typeof StoriesIndexRoute
 }
 
 declare module '@tanstack/react-router' {
   interface FileRoutesByPath {
+    '/support': {
+      id: '/support'
+      path: '/support'
+      fullPath: '/support'
+      preLoaderRoute: typeof SupportRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/profile': {
       id: '/profile'
       path: '/profile'
@@ -169,25 +189,46 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ProfileRouteImport
       parentRoute: typeof rootRouteImport
     }
-    '/messages': {
-      id: '/messages'
-      path: '/messages'
-      fullPath: '/messages'
-      preLoaderRoute: typeof MessagesRouteImport
+    '/pricing': {
+      id: '/pricing'
+      path: '/pricing'
+      fullPath: '/pricing'
+      preLoaderRoute: typeof PricingRouteImport
       parentRoute: typeof rootRouteImport
     }
-    '/community': {
-      id: '/community'
-      path: '/community'
-      fullPath: '/community'
-      preLoaderRoute: typeof CommunityRouteImport
+    '/partners': {
+      id: '/partners'
+      path: '/partners'
+      fullPath: '/partners'
+      preLoaderRoute: typeof PartnersRouteImport
       parentRoute: typeof rootRouteImport
     }
-    '/about': {
-      id: '/about'
-      path: '/about'
-      fullPath: '/about'
-      preLoaderRoute: typeof AboutRouteImport
+    '/onboarding': {
+      id: '/onboarding'
+      path: '/onboarding'
+      fullPath: '/onboarding'
+      preLoaderRoute: typeof OnboardingRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/locations': {
+      id: '/locations'
+      path: '/locations'
+      fullPath: '/locations'
+      preLoaderRoute: typeof LocationsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/how-it-works': {
+      id: '/how-it-works'
+      path: '/how-it-works'
+      fullPath: '/how-it-works'
+      preLoaderRoute: typeof HowItWorksRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/for-families': {
+      id: '/for-families'
+      path: '/for-families'
+      fullPath: '/for-families'
+      preLoaderRoute: typeof ForFamiliesRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/': {
@@ -195,27 +236,6 @@ declare module '@tanstack/react-router' {
       path: '/'
       fullPath: '/'
       preLoaderRoute: typeof IndexRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/stories/': {
-      id: '/stories/'
-      path: '/stories'
-      fullPath: '/stories/'
-      preLoaderRoute: typeof StoriesIndexRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/stories/new': {
-      id: '/stories/new'
-      path: '/stories/new'
-      fullPath: '/stories/new'
-      preLoaderRoute: typeof StoriesNewRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/stories/$storyId': {
-      id: '/stories/$storyId'
-      path: '/stories/$storyId'
-      fullPath: '/stories/$storyId'
-      preLoaderRoute: typeof StoriesStoryIdRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/auth/sign-up': {
@@ -237,15 +257,16 @@ declare module '@tanstack/react-router' {
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
-  AboutRoute: AboutRoute,
-  CommunityRoute: CommunityRoute,
-  MessagesRoute: MessagesRoute,
+  ForFamiliesRoute: ForFamiliesRoute,
+  HowItWorksRoute: HowItWorksRoute,
+  LocationsRoute: LocationsRoute,
+  OnboardingRoute: OnboardingRoute,
+  PartnersRoute: PartnersRoute,
+  PricingRoute: PricingRoute,
   ProfileRoute: ProfileRoute,
+  SupportRoute: SupportRoute,
   AuthSignInRoute: AuthSignInRoute,
   AuthSignUpRoute: AuthSignUpRoute,
-  StoriesStoryIdRoute: StoriesStoryIdRoute,
-  StoriesNewRoute: StoriesNewRoute,
-  StoriesIndexRoute: StoriesIndexRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)

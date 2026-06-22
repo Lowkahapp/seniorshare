@@ -1,16 +1,16 @@
 import { Link } from '@tanstack/react-router'
-import { Heart } from 'lucide-react'
+import { Home } from 'lucide-react'
 
 import ThemeToggle from './ThemeToggle'
 import { Button } from '@/components/ui/button'
+import { VerifiedBadge } from '@/components/senoshare/SenoshareCards'
 import { getDisplayName, useAuth } from '@/hooks/useAuth'
 
 const navLinks = [
-  { to: '/', label: 'Home' },
-  { to: '/stories', label: 'Stories' },
-  { to: '/community', label: 'Community' },
-  { to: '/messages', label: 'Messages' },
-  { to: '/about', label: 'About' },
+  { to: '/how-it-works', label: 'How it works' },
+  { to: '/for-families', label: 'For families' },
+  { to: '/pricing', label: 'Pricing' },
+  { to: '/support', label: 'Support' },
 ] as const
 
 export default function Header() {
@@ -24,8 +24,8 @@ export default function Header() {
             to="/"
             className="inline-flex items-center gap-2 rounded-full border border-[var(--chip-line)] bg-[var(--chip-bg)] px-3 py-1.5 text-sm text-[var(--sea-ink)] no-underline shadow-[0_8px_24px_rgba(30,90,72,0.08)] sm:px-4 sm:py-2"
           >
-            <Heart className="h-4 w-4 text-[var(--lagoon-deep)]" />
-            SeniorShare
+            <Home className="h-4 w-4 text-[var(--lagoon-deep)]" />
+            SenoShare
           </Link>
         </h2>
 
@@ -48,13 +48,21 @@ export default function Header() {
               <Link to="/profile">{getDisplayName(user)}</Link>
             </Button>
           ) : !loading ? (
-            <Button size="sm" asChild>
-              <Link to="/auth/sign-in">Sign in</Link>
-            </Button>
+            <>
+              <Button variant="ghost" size="sm" asChild>
+                <Link to="/auth/sign-in">Sign in</Link>
+              </Button>
+              <Button size="sm" asChild>
+                <Link to="/onboarding">Get started</Link>
+              </Button>
+            </>
           ) : null}
           <ThemeToggle />
         </div>
       </nav>
+      <div className="page-wrap pb-2 sm:hidden">
+        <VerifiedBadge />
+      </div>
     </header>
   )
 }
