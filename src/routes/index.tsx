@@ -63,7 +63,7 @@ function HomePage() {
       </section>
 
       {/* CTA */}
-      <section className="island-shell mt-16 rounded-[2rem] px-6 py-10 text-center sm:px-10 sm:py-14">
+      <section className="island-shell mt-16 rounded-xl border border-[var(--line)] px-6 py-10 text-center sm:px-10 sm:py-14">
         <p className="island-kicker mb-3">Ready to find your match?</p>
         <h2 className="display-title mx-auto mb-4 max-w-2xl text-3xl font-bold text-[var(--sea-ink)] sm:text-4xl">
           Take a few minutes to set up your profile
@@ -71,7 +71,7 @@ function HomePage() {
         <p className="mx-auto mb-8 max-w-xl text-base text-[var(--sea-ink-soft)] sm:text-lg">
           Our onboarding wizard walks you through it, one question at a time.
         </p>
-        <Button asChild size="lg">
+        <Button variant="primary" asChild size="lg">
           <Link to="/onboarding">Begin onboarding</Link>
         </Button>
       </section>

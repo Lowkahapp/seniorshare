@@ -8,7 +8,7 @@ const badgeVariants = cva('demo-pill inline-flex', {
     variant: {
       default: '',
       accent:
-        'border-[rgba(50,143,151,0.3)] bg-[rgba(79,184,178,0.14)] text-[var(--lagoon-deep)]',
+        'border-[#bfdbfe] bg-[var(--lagoon-light)] text-[var(--lagoon-deep)]',
     },
   },
   defaultVariants: {

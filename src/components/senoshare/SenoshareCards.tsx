@@ -35,7 +35,7 @@ export function MemberCard({
   return (
     <article
       className={cn(
-        'hero-member-card rounded-2xl border border-[var(--line)] bg-white p-4 shadow-[0_8px_24px_rgba(23,58,64,0.06)]',
+        'hero-member-card rounded-lg border border-[var(--line)] bg-white p-4',
         !compact && 'island-shell feature-card p-5',
       )}
     >
@@ -66,9 +66,9 @@ export function MatchCard({
   description: string
 }) {
   return (
-    <article className="hero-member-card rounded-2xl border border-[rgba(79,184,178,0.35)] bg-white p-4 shadow-[0_8px_24px_rgba(23,58,64,0.06)]">
+    <article className="hero-member-card rounded-lg border border-[#bfdbfe] bg-white p-4">
       <div className="mb-3 flex items-center gap-2">
-        <div className="flex h-8 w-8 items-center justify-center rounded-full bg-[rgba(79,184,178,0.2)]">
+        <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-[var(--lagoon-light)]">
           <Shield className="h-4 w-4 text-[var(--lagoon-deep)]" />
         </div>
         <p className="text-sm font-bold uppercase tracking-wide text-[var(--lagoon-deep)]">
@@ -92,10 +92,10 @@ export function TrustPillar({
 }) {
   return (
     <article
-      className="island-shell feature-card rise-in rounded-2xl p-6"
+      className="island-shell feature-card rise-in rounded-xl p-6"
       style={{ animationDelay: `${index * 70}ms` }}
     >
-      <div className="mb-3 flex h-9 w-9 items-center justify-center rounded-full bg-[rgba(79,184,178,0.14)] text-sm font-bold text-[var(--lagoon-deep)]">
+      <div className="mb-3 flex h-9 w-9 items-center justify-center rounded-lg bg-[var(--lagoon-light)] text-sm font-bold text-[var(--lagoon-deep)]">
         {index + 1}
       </div>
       <h3 className="mb-2 text-lg font-semibold text-[var(--sea-ink)]">{title}</h3>
@@ -116,8 +116,8 @@ export function StepCard({
   description: string
 }) {
   return (
-    <article className="island-shell rounded-2xl p-6">
-      <div className="mb-4 flex h-10 w-10 items-center justify-center rounded-full bg-[rgba(79,184,178,0.14)] text-lg font-bold text-[var(--lagoon-deep)]">
+    <article className="island-shell rounded-xl p-6">
+      <div className="mb-4 flex h-10 w-10 items-center justify-center rounded-lg bg-[var(--lagoon-light)] text-lg font-bold text-[var(--lagoon-deep)]">
         {step}
       </div>
       <h3 className="mb-2 text-lg font-semibold text-[var(--sea-ink)]">{title}</h3>

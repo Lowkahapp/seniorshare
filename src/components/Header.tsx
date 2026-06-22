@@ -23,7 +23,7 @@ export default function Header() {
         <h2 className="m-0 flex-shrink-0 text-base font-semibold tracking-tight">
           <Link
             to="/"
-            className="inline-flex items-center gap-2 rounded-full border border-[var(--chip-line)] bg-[var(--chip-bg)] px-3 py-1.5 text-sm text-[var(--sea-ink)] no-underline shadow-[0_8px_24px_rgba(30,90,72,0.08)] sm:px-4 sm:py-2"
+            className="inline-flex items-center gap-2 rounded-lg border border-[var(--chip-line)] bg-[var(--chip-bg)] px-3 py-1.5 text-sm font-semibold text-[var(--sea-ink)] no-underline sm:px-4 sm:py-2"
           >
             <Home className="h-4 w-4 text-[var(--lagoon-deep)]" />
             SenoShare
@@ -53,7 +53,7 @@ export default function Header() {
               <Button variant="ghost" size="sm" asChild>
                 <Link to="/auth/sign-in">Log in</Link>
               </Button>
-              <Button size="sm" asChild>
+              <Button variant="primary" size="sm" asChild>
                 <Link to="/onboarding">Get the app</Link>
               </Button>
             </>
