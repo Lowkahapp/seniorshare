@@ -55,8 +55,10 @@ export default function Header() {
               <Button variant="ghost" size="sm" asChild className="hidden sm:inline-flex">
                 <Link to="/auth/sign-in">Log in</Link>
               </Button>
-              <Button variant="primary" size="sm" asChild className="shrink-0 px-4">
-                <Link to="/onboarding">Get Started</Link>
+              <Button variant="primary" size="sm" asChild className="min-w-[7.5rem] shrink-0">
+                <Link to="/onboarding" className="text-white">
+                  Get Started
+                </Link>
               </Button>
             </>
           ) : null}

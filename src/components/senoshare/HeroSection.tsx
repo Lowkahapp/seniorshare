@@ -75,20 +75,20 @@ export function HeroSection() {
               </Button>
             </div>
 
-            <div className="mt-8 grid gap-3 border-t border-[var(--line)] pt-6 sm:grid-cols-3">
+            <div className="hero-stats-grid mt-8 border-t border-[var(--line)] pt-6">
               {trustStats.map(({ icon: Icon, value, label }) => (
                 <div
                   key={label}
-                  className="hero-stat-card flex items-center gap-3 rounded-lg p-3 sm:flex-col sm:items-start sm:p-4 lg:flex-row lg:items-center"
+                  className="hero-stat-card flex items-center gap-3 rounded-lg p-4"
                 >
                   <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg bg-white">
                     <Icon className="h-4 w-4 text-[var(--lagoon-deep)]" />
                   </div>
-                  <div className="min-w-0">
-                    <p className="text-lg font-bold tracking-tight whitespace-nowrap text-[var(--sea-ink)]">
+                  <div>
+                    <p className="text-base font-bold leading-tight text-[var(--sea-ink)] sm:text-lg">
                       {value}
                     </p>
-                    <p className="mt-0.5 text-xs leading-snug text-[var(--sea-ink-soft)] sm:text-sm">
+                    <p className="mt-0.5 text-sm leading-snug text-[var(--sea-ink-soft)]">
                       {label}
                     </p>
                   </div>
