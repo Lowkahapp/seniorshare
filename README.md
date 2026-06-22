@@ -59,7 +59,8 @@ src/
 | Variable | Description |
 | --- | --- |
 | `VITE_SUPABASE_URL` | Your Supabase project URL |
-| `VITE_SUPABASE_ANON_KEY` | Supabase anonymous/public key |
+| `VITE_SUPABASE_PUBLISHABLE_KEY` | Supabase publishable (anon) key |
+| `VITE_SUPABASE_PROJECT_ID` | Supabase project ID |
 
 ## License
 

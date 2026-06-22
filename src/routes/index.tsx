@@ -98,7 +98,7 @@ function HomePage() {
             </li>
             <li>
               Copy <code>.env.example</code> to <code>.env</code> and add your
-              Supabase project URL and anon key.
+              Supabase project URL and publishable key.
             </li>
             <li>
               Customize routes in <code>src/routes</code> as you build out
