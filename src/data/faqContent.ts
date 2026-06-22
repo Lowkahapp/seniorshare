@@ -67,7 +67,7 @@ export const faqCategories: FaqCategory[] = [
         id: 'feel-unsafe',
         question: 'What if I feel unsafe after a match?',
         answer:
-          'Call us immediately — a real person answers 24/7. We take safety concerns seriously and can pause a match, involve your advocate, and help you exit an arrangement safely. You are never locked in, and you are never left to handle a crisis alone.',
+          'Call our 24/7 member support line immediately. A trained advocate — not a bot — will pick up. If there is immediate danger, always call 911 first. We also provide a clear exit process so no one is ever trapped in an arrangement.',
       },
     ],
   },
@@ -97,7 +97,7 @@ export const faqCategories: FaqCategory[] = [
         id: 'how-much-save',
         question: 'How much can I realistically save through home sharing?',
         answer:
-          'It depends on your market, your home, and your arrangement. Many home providers offset hundreds of dollars in monthly housing costs. Many seekers find affordable rooms well below market rent — with companionship included. Your advocate can help you think through realistic numbers for your area.',
+          'Our members report average monthly savings of $800 to $2,000 depending on location and arrangement. Home providers offset mortgage or maintenance costs. Home seekers avoid market-rate rent entirely.',
       },
     ],
   },
@@ -152,7 +152,7 @@ export const faqCategories: FaqCategory[] = [
         id: 'legal-protections-provider',
         question: 'What legal protections do I have as a home provider?',
         answer:
-          'A written co-living agreement is your first line of protection — covering rent, house rules, and exit terms. Depending on your state, you may also have landlord-tenant laws that apply. We strongly recommend reviewing your agreement with an elder law attorney before move-in.',
+          'Your co-living agreement sets the baseline. Beyond that, landlord-tenant law in your state may apply depending on how the arrangement is structured. We recommend consulting a local attorney familiar with housing law before finalizing any arrangement.',
       },
     ],
   },
