@@ -3,7 +3,6 @@ import { Home } from 'lucide-react'
 
 import ThemeToggle from './ThemeToggle'
 import { Button } from '@/components/ui/button'
-import { VerifiedBadge } from '@/components/senoshare/SenoshareCards'
 import { getDisplayName, useAuth } from '@/hooks/useAuth'
 
 const navLinks = [
@@ -19,23 +18,26 @@ export default function Header() {
 
   return (
     <header className="sticky top-0 z-50 border-b border-[var(--line)] bg-[var(--header-bg)] px-4 backdrop-blur-lg">
-      <nav className="page-wrap flex flex-wrap items-center gap-x-3 gap-y-2 py-3 sm:py-4">
-        <h2 className="m-0 flex-shrink-0 text-base font-semibold tracking-tight">
+      <nav
+        className="page-wrap flex h-16 items-center justify-between gap-4"
+        aria-label="Main navigation"
+      >
+        <div className="flex shrink-0 items-center">
           <Link
             to="/"
-            className="inline-flex items-center gap-2 rounded-lg border border-[var(--chip-line)] bg-[var(--chip-bg)] px-3 py-1.5 text-sm font-semibold text-[var(--sea-ink)] no-underline sm:px-4 sm:py-2"
+            className="inline-flex items-center gap-2 rounded-lg border border-[var(--chip-line)] bg-[var(--chip-bg)] px-3 py-2 text-sm font-semibold text-[var(--sea-ink)] no-underline sm:px-4"
           >
-            <Home className="h-4 w-4 text-[var(--lagoon-deep)]" />
+            <Home className="h-4 w-4 text-[var(--lagoon-deep)]" aria-hidden="true" />
             SenoShare
           </Link>
-        </h2>
+        </div>
 
-        <div className="order-3 flex w-full flex-wrap items-center gap-x-4 gap-y-1 pb-1 text-sm font-semibold sm:order-none sm:w-auto sm:flex-nowrap sm:pb-0">
+        <div className="flex min-w-0 flex-1 items-center justify-center gap-4 overflow-x-auto px-1 [-ms-overflow-style:none] [scrollbar-width:none] lg:gap-6 [&::-webkit-scrollbar]:hidden">
           {navLinks.map(({ to, label }) => (
             <Link
               key={to}
               to={to}
-              className="nav-link"
+              className="nav-link shrink-0 whitespace-nowrap text-sm font-semibold"
               activeProps={{ className: 'nav-link is-active' }}
             >
               {label}
@@ -43,14 +45,14 @@ export default function Header() {
           ))}
         </div>
 
-        <div className="ml-auto flex items-center gap-1.5 sm:gap-2">
+        <div className="flex shrink-0 items-center gap-2">
           {!loading && user ? (
             <Button variant="secondary" size="sm" asChild>
               <Link to="/profile">{getDisplayName(user)}</Link>
             </Button>
           ) : !loading ? (
             <>
-              <Button variant="ghost" size="sm" asChild>
+              <Button variant="ghost" size="sm" asChild className="hidden sm:inline-flex">
                 <Link to="/auth/sign-in">Log in</Link>
               </Button>
               <Button variant="primary" size="sm" asChild>
@@ -61,9 +63,6 @@ export default function Header() {
           <ThemeToggle />
         </div>
       </nav>
-      <div className="page-wrap pb-2 sm:hidden">
-        <VerifiedBadge />
-      </div>
     </header>
   )
 }

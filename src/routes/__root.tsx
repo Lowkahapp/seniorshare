@@ -3,6 +3,7 @@ import { QueryClient, QueryClientProvider } from '@tanstack/react-query'
 
 import Footer from '../components/Footer'
 import Header from '../components/Header'
+import { SupportFab } from '../components/SupportFab'
 import { AuthProvider } from '../hooks/useAuth'
 
 import { Button } from '@/components/ui/button'
@@ -68,6 +69,7 @@ function RootDocument({ children }: { children: React.ReactNode }) {
             <Header />
             {children}
             <Footer />
+            <SupportFab />
           </AuthProvider>
         </QueryClientProvider>
         <Scripts />
