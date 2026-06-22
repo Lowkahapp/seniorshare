@@ -1,8 +1,21 @@
 import { Link } from '@tanstack/react-router'
-import { Heart, Users, BookOpen } from 'lucide-react'
+import { Heart } from 'lucide-react'
+
 import ThemeToggle from './ThemeToggle'
+import { Button } from '@/components/ui/button'
+import { getDisplayName, useAuth } from '@/hooks/useAuth'
+
+const navLinks = [
+  { to: '/', label: 'Home' },
+  { to: '/stories', label: 'Stories' },
+  { to: '/community', label: 'Community' },
+  { to: '/messages', label: 'Messages' },
+  { to: '/about', label: 'About' },
+] as const
 
 export default function Header() {
+  const { user, loading } = useAuth()
+
   return (
     <header className="sticky top-0 z-50 border-b border-[var(--line)] bg-[var(--header-bg)] px-4 backdrop-blur-lg">
       <nav className="page-wrap flex flex-wrap items-center gap-x-3 gap-y-2 py-3 sm:py-4">
@@ -17,28 +30,31 @@ export default function Header() {
         </h2>
 
         <div className="order-3 flex w-full flex-wrap items-center gap-x-4 gap-y-1 pb-1 text-sm font-semibold sm:order-none sm:w-auto sm:flex-nowrap sm:pb-0">
-          <Link
-            to="/"
-            className="nav-link"
-            activeProps={{ className: 'nav-link is-active' }}
-          >
-            Home
-          </Link>
-          <Link
-            to="/about"
-            className="nav-link"
-            activeProps={{ className: 'nav-link is-active' }}
-          >
-            About
-          </Link>
+          {navLinks.map(({ to, label }) => (
+            <Link
+              key={to}
+              to={to}
+              className="nav-link"
+              activeProps={{ className: 'nav-link is-active' }}
+            >
+              {label}
+            </Link>
+          ))}
         </div>
 
         <div className="ml-auto flex items-center gap-1.5 sm:gap-2">
+          {!loading && user ? (
+            <Button variant="secondary" size="sm" asChild>
+              <Link to="/profile">{getDisplayName(user)}</Link>
+            </Button>
+          ) : !loading ? (
+            <Button size="sm" asChild>
+              <Link to="/auth/sign-in">Sign in</Link>
+            </Button>
+          ) : null}
           <ThemeToggle />
         </div>
       </nav>
     </header>
   )
 }
-
-export { Users, BookOpen }

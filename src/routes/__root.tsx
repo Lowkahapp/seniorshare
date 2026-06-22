@@ -1,8 +1,11 @@
-import { HeadContent, Scripts, createRootRoute } from '@tanstack/react-router'
+import { HeadContent, Link, Scripts, createRootRoute } from '@tanstack/react-router'
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query'
 
 import Footer from '../components/Footer'
 import Header from '../components/Header'
+import { AuthProvider } from '../hooks/useAuth'
+
+import { Button } from '@/components/ui/button'
 
 import appCss from '../styles.css?url'
 
@@ -29,8 +32,28 @@ export const Route = createRootRoute({
     ],
     links: [{ rel: 'stylesheet', href: appCss }],
   }),
+  notFoundComponent: NotFoundPage,
   shellComponent: RootDocument,
 })
+
+function NotFoundPage() {
+  return (
+    <main className="page-wrap px-4 pb-8 pt-14">
+      <section className="island-shell demo-center rounded-[2rem] px-6 py-16 text-center sm:px-10">
+        <p className="island-kicker mb-3">Page not found</p>
+        <h1 className="display-title mb-4 text-4xl font-bold text-[var(--sea-ink)]">
+          We couldn&apos;t find that page
+        </h1>
+        <p className="mx-auto mb-8 max-w-md text-base text-[var(--sea-ink-soft)]">
+          The link may be outdated, or the page may have moved.
+        </p>
+        <Button asChild size="lg">
+          <Link to="/">Return home</Link>
+        </Button>
+      </section>
+    </main>
+  )
+}
 
 function RootDocument({ children }: { children: React.ReactNode }) {
   return (
@@ -41,9 +64,11 @@ function RootDocument({ children }: { children: React.ReactNode }) {
       </head>
       <body className="font-sans antialiased [overflow-wrap:anywhere] selection:bg-[rgba(79,184,178,0.24)]">
         <QueryClientProvider client={queryClient}>
-          <Header />
-          {children}
-          <Footer />
+          <AuthProvider>
+            <Header />
+            {children}
+            <Footer />
+          </AuthProvider>
         </QueryClientProvider>
         <Scripts />
       </body>
