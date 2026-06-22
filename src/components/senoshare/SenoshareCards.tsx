@@ -53,7 +53,7 @@ export function MemberCard({
         <VerifiedBadge />
       </div>
       <p className="text-sm font-semibold text-[var(--lagoon-deep)]">{role}</p>
-      <p className="mt-1 text-sm text-[var(--sea-ink-soft)]">{details}</p>
+      <p className="body-readable mt-1 text-sm text-[var(--sea-ink-soft)]">{details}</p>
     </article>
   )
 }
@@ -76,7 +76,9 @@ export function MatchCard({
         </p>
       </div>
       <p className="font-semibold text-[var(--sea-ink)]">{title}</p>
-      <p className="mt-1 text-sm text-[var(--sea-ink-soft)]">{description}</p>
+      <p className="body-readable mt-1 text-sm text-[var(--sea-ink-soft)]">
+        {description}
+      </p>
     </article>
   )
 }
@@ -92,14 +94,16 @@ export function TrustPillar({
 }) {
   return (
     <article
-      className="island-shell feature-card rise-in rounded-xl p-6"
+      className="island-shell feature-card rise-in flex h-full flex-col rounded-xl p-8"
       style={{ animationDelay: `${index * 70}ms` }}
     >
-      <div className="mb-3 flex h-9 w-9 items-center justify-center rounded-lg bg-[var(--lagoon-light)] text-sm font-bold text-[var(--lagoon-deep)]">
+      <div className="mb-4 flex h-9 w-9 items-center justify-center rounded-lg bg-[var(--lagoon-light)] text-sm font-bold text-[var(--lagoon-deep)]">
         {index + 1}
       </div>
-      <h3 className="mb-2 text-lg font-semibold text-[var(--sea-ink)]">{title}</h3>
-      <p className="m-0 text-base leading-relaxed text-[var(--sea-ink-soft)]">
+      <h3 className="mb-2 text-lg font-semibold leading-snug text-[var(--sea-ink)]">
+        {title}
+      </h3>
+      <p className="body-readable m-0 mt-auto text-base text-[var(--sea-ink-soft)]">
         {description}
       </p>
     </article>
@@ -116,12 +120,14 @@ export function StepCard({
   description: string
 }) {
   return (
-    <article className="island-shell rounded-xl p-6">
+    <article className="island-shell flex h-full flex-col rounded-xl p-8">
       <div className="mb-4 flex h-10 w-10 items-center justify-center rounded-lg bg-[var(--lagoon-light)] text-lg font-bold text-[var(--lagoon-deep)]">
         {step}
       </div>
-      <h3 className="mb-2 text-lg font-semibold text-[var(--sea-ink)]">{title}</h3>
-      <p className="m-0 text-base leading-relaxed text-[var(--sea-ink-soft)]">
+      <h3 className="mb-2 text-lg font-semibold leading-snug text-[var(--sea-ink)]">
+        {title}
+      </h3>
+      <p className="body-readable m-0 mt-auto text-base text-[var(--sea-ink-soft)]">
         {description}
       </p>
     </article>

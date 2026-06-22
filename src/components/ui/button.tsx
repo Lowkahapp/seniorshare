@@ -5,16 +5,16 @@ import { cva, type VariantProps } from 'class-variance-authority'
 import { cn } from '@/lib/utils'
 
 const buttonVariants = cva(
-  'inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-lg text-sm font-semibold transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--lagoon)] disabled:pointer-events-none disabled:opacity-50',
+  'inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-lg text-sm font-semibold transition-[background-color,border-color,box-shadow,transform,color] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--lagoon)] focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50',
   {
     variants: {
       variant: {
         default:
-          'border border-[var(--line)] bg-[var(--lagoon-light)] text-[var(--lagoon-deep)] hover:bg-[#dbeafe]',
+          'border border-[var(--line)] bg-[var(--lagoon-light)] text-[var(--lagoon-deep)] hover:border-[#bfdbfe] hover:bg-[#dbeafe]',
         primary:
-          'border border-[var(--lagoon-deep)] bg-[var(--lagoon-deep)] text-white hover:bg-[#1e40af]',
+          'border border-[var(--lagoon-deep)] bg-[var(--lagoon-deep)] text-white shadow-[0_2px_6px_rgba(29,78,216,0.28)] hover:border-[#1e40af] hover:bg-[#1e40af] hover:shadow-[0_4px_10px_rgba(29,78,216,0.32)] active:translate-y-px',
         secondary:
-          'border border-[var(--line)] bg-white text-[var(--sea-ink)] hover:bg-[var(--lagoon-light)]',
+          'border border-[var(--line)] bg-white text-[var(--sea-ink)] hover:border-[#bfdbfe] hover:bg-[var(--lagoon-light)]',
         ghost:
           'text-[var(--sea-ink-soft)] hover:bg-[var(--link-bg-hover)] hover:text-[var(--sea-ink)]',
       },

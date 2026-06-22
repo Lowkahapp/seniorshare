@@ -50,7 +50,7 @@ export function HeroSection() {
             <p className="mb-4 text-lg font-semibold leading-snug text-[var(--sea-ink)]">
               Don&apos;t downsize your lifestyle. Share your space.
             </p>
-            <p className="mb-6 text-base leading-relaxed text-[var(--sea-ink-soft)]">
+            <p className="body-readable mb-6 text-base text-[var(--sea-ink-soft)]">
               SenoShare is a secure, high-trust matching ecosystem that connects
               active older adults to pool resources, share beautiful homes, and
               build built-in companionship — protected by rigorous vetting and

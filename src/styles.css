@@ -8,7 +8,7 @@
 
 :root {
   --sea-ink: #0f2744;
-  --sea-ink-soft: #5b6b82;
+  --sea-ink-soft: #3d5166;
   --lagoon: #2563eb;
   --lagoon-deep: #1d4ed8;
   --lagoon-light: #eff6ff;
@@ -17,9 +17,9 @@
   --foam: #ffffff;
   --surface: #ffffff;
   --surface-strong: #ffffff;
-  --line: #dbe4f0;
+  --line: #e2e8f0;
   --inset-glint: #ffffff;
-  --kicker: #2563eb;
+  --kicker: #4a6280;
   --bg-base: #ffffff;
   --header-bg: #ffffff;
   --chip-bg: #f8fafc;
@@ -135,18 +135,49 @@ pre code {
 
 .display-title {
   font-family: "Fraunces", Georgia, serif;
+  line-height: 1.15;
+}
+
+h1.display-title,
+h2.display-title {
+  line-height: 1.12;
+}
+
+.body-readable {
+  line-height: 1.6;
 }
 
 .island-shell,
 .hero-shell {
   border: 1px solid var(--line);
   background: #ffffff;
-  box-shadow: none;
+  box-shadow:
+    0 4px 6px -1px rgba(0, 0, 0, 0.05),
+    0 2px 4px -1px rgba(0, 0, 0, 0.03);
+  transition:
+    border-color 180ms ease,
+    box-shadow 180ms ease,
+    transform 180ms ease;
+}
+
+.island-shell:not(.hero-shell):hover,
+.feature-card:hover {
+  border-color: color-mix(in oklab, var(--lagoon) 22%, var(--line));
+  box-shadow:
+    0 8px 16px -4px rgba(0, 0, 0, 0.08),
+    0 4px 8px -2px rgba(0, 0, 0, 0.04);
+  transform: translateY(-1px);
 }
 
 .hero-shell-pro {
   background: #ffffff;
-  box-shadow: none;
+  box-shadow:
+    0 4px 6px -1px rgba(0, 0, 0, 0.05),
+    0 2px 4px -1px rgba(0, 0, 0, 0.03);
+}
+
+.hero-shell-pro:hover {
+  transform: none;
 }
 
 :root[data-theme="dark"] .hero-shell-pro {
@@ -164,11 +195,18 @@ pre code {
 }
 
 .hero-member-card {
-  transition: border-color 180ms ease;
+  transition:
+    border-color 180ms ease,
+    box-shadow 180ms ease,
+    transform 180ms ease;
 }
 
 .hero-member-card:hover {
   border-color: color-mix(in oklab, var(--lagoon) 40%, var(--line));
+  box-shadow:
+    0 8px 16px -4px rgba(0, 0, 0, 0.08),
+    0 4px 8px -2px rgba(0, 0, 0, 0.04);
+  transform: translateY(-1px);
 }
 
 .hero-gallery-card img {
@@ -190,12 +228,18 @@ pre code {
 
 .feature-card {
   background: #ffffff;
-  box-shadow: none;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
 }
 
 .feature-card:hover {
-  transform: none;
   border-color: color-mix(in oklab, var(--lagoon) 35%, var(--line));
+}
+
+.card-grid {
+  display: grid;
+  align-items: stretch;
 }
 
 .demo-page {
@@ -409,10 +453,10 @@ a {
 }
 
 .island-kicker {
-  letter-spacing: 0.16em;
+  letter-spacing: 0.05em;
   text-transform: uppercase;
   font-weight: 700;
-  font-size: 0.69rem;
+  font-size: 0.75rem;
   color: var(--kicker);
 }
 
