@@ -79,7 +79,7 @@ export const faqCategories: FaqCategory[] = [
         id: 'how-much-cost',
         question: 'How much does Senoshare cost?',
         answer:
-          'Browsing and creating a profile is free. Verified membership — which unlocks matching, mediated introductions, and advocate support — starts at $29 per month. There are no hidden fees, and you can see full pricing details on our Pricing page before you commit.',
+          'Browsing and creating a profile is free. Verified membership starts at $19 per month, with Full Support at $49 per month for hands-on advocate guidance. There are no hidden fees, and you can see full pricing details on our Pricing page before you commit.',
       },
       {
         id: 'social-security',

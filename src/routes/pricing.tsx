@@ -1,66 +1,131 @@
 import { createFileRoute, Link } from '@tanstack/react-router'
+import { Check } from 'lucide-react'
 
-import { PageHero } from '@/components/PageHero'
+import {
+  Accordion,
+  AccordionContent,
+  AccordionItem,
+  AccordionTrigger,
+} from '@/components/ui/accordion'
 import { Button } from '@/components/ui/button'
+import { Badge } from '@/components/ui/badge'
+import {
+  pricingFaqs,
+  pricingPlans,
+  pricingTrustNotes,
+} from '@/data/pricingContent'
+import { cn } from '@/lib/utils'
 
 export const Route = createFileRoute('/pricing')({ component: PricingPage })
-
-const plans = [
-  {
-    name: 'Browse',
-    price: 'Free',
-    description: 'Explore how SenoShare works and see if home sharing fits your life.',
-    features: ['Create a profile', 'Learn about the matching process', 'Talk with our team'],
-  },
-  {
-    name: 'Verified Member',
-    price: 'From $29/mo',
-    description: 'Full access to matching after identity verification and background screening.',
-    features: [
-      'Curated matches in your area',
-      'Mediated video introductions',
-      'Co-living agreement support',
-      '24/7 member support',
-    ],
-    highlighted: true,
-  },
-]
 
 function PricingPage() {
   return (
     <main className="page-wrap px-4 pb-8 pt-14">
-      <PageHero
-        kicker="Pricing"
-        title="Free to browse. Pay when you're ready to match."
-        description="Identity verification is required before any match. No hidden fees, no pressure."
-      />
+      <section className="mx-auto mb-12 max-w-3xl text-center">
+        <p className="island-kicker mb-3">Pricing</p>
+        <h1 className="display-title mb-5 text-4xl font-bold tracking-tight text-[var(--sea-ink)] sm:text-5xl">
+          Simple, transparent pricing.
+        </h1>
+        <p className="text-base leading-relaxed text-[var(--sea-ink-soft)] sm:text-lg">
+          Free to explore. Pay only when you&apos;re ready to connect.
+        </p>
+      </section>
 
-      <div className="mt-8 grid gap-4 md:grid-cols-2">
-        {plans.map((plan) => (
+      <section className="grid gap-5 lg:grid-cols-3">
+        {pricingPlans.map((plan) => (
           <article
-            key={plan.name}
-            className={
+            key={plan.id}
+            className={cn(
+              'relative flex h-full flex-col rounded-[2rem] border p-6 sm:p-8',
               plan.highlighted
-                ? 'island-shell rounded-[2rem] border-2 border-[rgba(79,184,178,0.35)] p-6 sm:p-8'
-                : 'island-shell rounded-[2rem] p-6 sm:p-8'
-            }
+                ? 'island-shell border-2 border-[rgba(79,184,178,0.4)] bg-[rgba(79,184,178,0.06)] shadow-[0_18px_40px_rgba(30,90,72,0.1)]'
+                : 'island-shell border-[var(--line)]',
+            )}
           >
-            <p className="island-kicker mb-2">{plan.name}</p>
-            <p className="display-title mb-3 text-3xl font-bold text-[var(--sea-ink)]">
-              {plan.price}
-            </p>
-            <p className="mb-5 text-base text-[var(--sea-ink-soft)]">{plan.description}</p>
-            <ul className="mb-6 space-y-2 text-sm text-[var(--sea-ink-soft)]">
-              {plan.features.map((f) => (
-                <li key={f}>• {f}</li>
+            {plan.badge ? (
+              <Badge variant="accent" className="mb-4 w-fit">
+                {plan.badge}
+              </Badge>
+            ) : (
+              <div className="mb-4 h-6" />
+            )}
+
+            <h2 className="text-xl font-bold text-[var(--sea-ink)]">{plan.name}</h2>
+            <p className="mt-2 text-sm text-[var(--sea-ink-soft)]">{plan.tagline}</p>
+
+            <div className="my-6 flex items-baseline gap-2">
+              <span className="display-title text-4xl font-bold text-[var(--sea-ink)]">
+                {plan.price}
+              </span>
+              {plan.priceNote ? (
+                <span className="text-sm font-medium text-[var(--sea-ink-soft)]">
+                  {plan.priceNote}
+                </span>
+              ) : null}
+            </div>
+
+            <ul className="mb-8 flex-1 space-y-3">
+              {plan.features.map((feature) => (
+                <li
+                  key={feature}
+                  className="flex items-start gap-2.5 text-sm leading-relaxed text-[var(--sea-ink-soft)]"
+                >
+                  <Check
+                    className="mt-0.5 h-4 w-4 shrink-0 text-[var(--lagoon-deep)]"
+                    aria-hidden
+                  />
+                  <span>{feature}</span>
+                </li>
               ))}
             </ul>
-            <Button asChild className="w-full">
-              <Link to="/onboarding">Get started</Link>
+
+            <Button
+              variant={plan.highlighted ? 'default' : 'secondary'}
+              className="w-full"
+              asChild
+            >
+              <Link to={plan.ctaTo}>{plan.cta}</Link>
             </Button>
           </article>
         ))}
-      </div>
+      </section>
+
+      <section className="mt-10 text-center">
+        <Link
+          to="/how-it-works"
+          hash="after-match"
+          className="text-base font-semibold text-[var(--lagoon-deep)] no-underline hover:underline"
+        >
+          See what happens after your match →
+        </Link>
+      </section>
+
+      <section className="mt-10 flex flex-col items-center gap-3 text-center">
+        {pricingTrustNotes.map((note) => (
+          <p key={note} className="m-0 text-sm text-[var(--sea-ink-soft)]">
+            {note}
+          </p>
+        ))}
+      </section>
+
+      <section className="mx-auto mt-16 max-w-3xl">
+        <h2 className="display-title mb-6 text-center text-2xl font-bold text-[var(--sea-ink)] sm:text-3xl">
+          Frequently asked questions
+        </h2>
+        <Accordion
+          type="single"
+          collapsible
+          defaultValue="browsing-free"
+          className="island-shell rounded-2xl px-5 sm:px-6"
+        >
+          {pricingFaqs.map((item) => (
+            <AccordionItem key={item.id} value={item.id}>
+              <AccordionTrigger>{item.question}</AccordionTrigger>
+              <AccordionContent>{item.answer}</AccordionContent>
+            </AccordionItem>
+          ))}
+        </Accordion>
+      </section>
     </main>
   )
 }
