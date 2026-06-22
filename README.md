@@ -43,6 +43,23 @@ The app runs at [http://localhost:3000](http://localhost:3000).
 | `npm run lint` | Run ESLint |
 | `npm run format` | Format code with Prettier |
 
+## Deploy to Vercel
+
+This app uses the Nitro `vercel` preset and outputs to `.vercel/output` (Build Output API).
+
+1. Push the repo to GitHub and import it in [Vercel](https://vercel.com/new).
+2. Vercel reads `vercel.json` automatically — no extra framework detection needed.
+3. Add environment variables in the Vercel project settings:
+   - `VITE_SUPABASE_URL`
+   - `VITE_SUPABASE_PUBLISHABLE_KEY`
+   - `VITE_SUPABASE_PROJECT_ID`
+
+Or deploy from the CLI:
+
+```bash
+npx vercel
+```
+
 ## Project Structure
 
 ```

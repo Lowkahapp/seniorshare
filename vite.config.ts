@@ -7,7 +7,15 @@ import { nitro } from 'nitro/vite'
 const config = defineConfig({
   resolve: { tsconfigPaths: true },
   plugins: [
-    nitro({ rollupConfig: { external: [/^@sentry\//] } }),
+    nitro({
+      preset: 'vercel',
+      output: {
+        dir: '.vercel/output',
+        serverDir: '.vercel/output/functions/__server.func',
+        publicDir: '.vercel/output/static',
+      },
+      rollupConfig: { external: [/^@sentry\//] },
+    }),
     tailwindcss(),
     tanstackStart(),
     viteReact(),
