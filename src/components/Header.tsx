@@ -8,10 +8,9 @@ import { getDisplayName, useAuth } from '@/hooks/useAuth'
 
 const navLinks = [
   { to: '/manifesto', label: 'Manifesto' },
-  { to: '/how-it-works', label: 'How it works' },
-  { to: '/for-families', label: 'For families' },
   { to: '/pricing', label: 'Pricing' },
-  { to: '/support', label: 'Support' },
+  { to: '/locations', label: 'Locations' },
+  { to: '/for-families', label: 'Resources' },
 ] as const
 
 export default function Header() {
@@ -51,10 +50,10 @@ export default function Header() {
           ) : !loading ? (
             <>
               <Button variant="ghost" size="sm" asChild>
-                <Link to="/auth/sign-in">Sign in</Link>
+                <Link to="/auth/sign-in">Log in</Link>
               </Button>
               <Button size="sm" asChild>
-                <Link to="/onboarding">Get started</Link>
+                <Link to="/onboarding">Get the app</Link>
               </Button>
             </>
           ) : null}

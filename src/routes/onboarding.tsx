@@ -10,11 +10,15 @@ import { cn } from '@/lib/utils'
 
 type OnboardingSearch = {
   email?: string
+  city?: string
+  state?: string
 }
 
 export const Route = createFileRoute('/onboarding')({
   validateSearch: (search: Record<string, unknown>): OnboardingSearch => ({
     email: typeof search.email === 'string' ? search.email : undefined,
+    city: typeof search.city === 'string' ? search.city : undefined,
+    state: typeof search.state === 'string' ? search.state : undefined,
   }),
   component: OnboardingPage,
 })
@@ -39,14 +43,15 @@ const steps = [
 ] as const
 
 function OnboardingPage() {
-  const { email: initialEmail } = useSearch({ from: '/onboarding' })
+  const { email: initialEmail, city: initialCity, state: initialState } =
+    useSearch({ from: '/onboarding' })
   const [step, setStep] = useState(0)
   const [done, setDone] = useState(false)
   const [form, setForm] = useState({
     email: initialEmail ?? '',
     role: '',
-    city: '',
-    state: '',
+    city: initialCity ?? '',
+    state: initialState ?? '',
     preferences: '',
   })
 
