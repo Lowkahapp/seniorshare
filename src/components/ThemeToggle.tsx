@@ -80,9 +80,8 @@ export default function ThemeToggle() {
       aria-label={modeLabels[mode]}
       title={modeLabels[mode]}
       className={cn(
-        'inline-flex h-9 w-9 items-center justify-center rounded-lg border border-[var(--chip-line)]',
-        'bg-[var(--chip-bg)] text-[var(--sea-ink-soft)] transition-colors',
-        'hover:border-[var(--lagoon)] hover:bg-[var(--lagoon-light)] hover:text-[var(--lagoon-deep)]',
+        'inline-flex h-9 w-9 items-center justify-center rounded-full text-[var(--sea-ink-soft)] transition-colors',
+        'hover:bg-[var(--lagoon-light)] hover:text-[var(--lagoon-deep)]',
         'focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--lagoon)] focus-visible:ring-offset-2',
       )}
     >

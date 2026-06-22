@@ -25,7 +25,7 @@ export default function Header() {
         <div className="flex shrink-0 items-center">
           <Link
             to="/"
-            className="inline-flex items-center gap-2 rounded-lg border border-[var(--chip-line)] bg-[var(--chip-bg)] px-3 py-2 text-sm font-semibold text-[var(--sea-ink)] no-underline sm:px-4"
+            className="inline-flex items-center gap-2 text-sm font-semibold text-[var(--sea-ink)] no-underline"
           >
             <Home className="h-4 w-4 text-[var(--lagoon-deep)]" aria-hidden="true" />
             SenoShare

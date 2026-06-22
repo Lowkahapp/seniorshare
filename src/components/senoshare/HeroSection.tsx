@@ -35,8 +35,8 @@ const trustStats = [
 export function HeroSection() {
   return (
     <>
-      <section className="hero-shell hero-shell-pro overflow-hidden rounded-xl border border-[var(--line)] bg-white px-6 py-10 sm:px-10 sm:py-12 lg:px-12">
-        <div className="grid items-start gap-10 lg:grid-cols-[minmax(0,1fr)_minmax(0,420px)] lg:gap-10 xl:grid-cols-2 xl:gap-12">
+      <section className="page-section--flush pb-12 pt-2 sm:pb-16 sm:pt-4">
+        <div className="grid items-start gap-12 lg:grid-cols-[minmax(0,1fr)_minmax(0,400px)] lg:gap-14 xl:grid-cols-2">
           <div className="flex max-w-xl flex-col">
             <div className="mb-5 flex flex-wrap items-center gap-3">
               <VerifiedBadge />
@@ -64,7 +64,7 @@ export function HeroSection() {
             <EmailSignupForm className="max-w-lg" />
 
             <div className="mt-4 flex flex-wrap items-center gap-3">
-              <Button variant="secondary" size="lg" asChild>
+              <Button variant="ghost" size="lg" asChild>
                 <Link to="/how-it-works">
                   See how it works
                   <ArrowRight className="h-4 w-4" />
@@ -75,15 +75,10 @@ export function HeroSection() {
               </Button>
             </div>
 
-            <div className="hero-stats-grid mt-8 border-t border-[var(--line)] pt-6">
+            <div className="hero-stats-grid mt-10 border-t border-[var(--line)] pt-8">
               {trustStats.map(({ icon: Icon, value, label }) => (
-                <div
-                  key={label}
-                  className="hero-stat-card flex items-center gap-3 rounded-lg p-4"
-                >
-                  <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg bg-white">
-                    <Icon className="h-4 w-4 text-[var(--lagoon-deep)]" />
-                  </div>
+                <div key={label} className="flex items-start gap-3">
+                  <Icon className="mt-0.5 h-5 w-5 shrink-0 text-[var(--lagoon-deep)]" />
                   <div>
                     <p className="text-base font-bold leading-tight text-[var(--sea-ink)] sm:text-lg">
                       {value}
@@ -97,18 +92,16 @@ export function HeroSection() {
             </div>
           </div>
 
-          <div className="hero-visual-panel rounded-xl border border-[var(--line)] bg-[var(--lagoon-light)] p-3 sm:p-4 lg:sticky lg:top-24 lg:self-start">
-            <div className="overflow-hidden rounded-lg border border-[var(--line)]">
-              <img
-                src={heroImages.home}
-                alt="A welcoming home with space to share"
-                className="aspect-[16/11] w-full object-cover"
-                loading="eager"
-                decoding="async"
-              />
-            </div>
+          <div className="hero-visual-panel lg:sticky lg:top-24 lg:self-start">
+            <img
+              src={heroImages.home}
+              alt="A welcoming home with space to share"
+              className="mb-6 aspect-[16/11] w-full rounded-2xl object-cover"
+              loading="eager"
+              decoding="async"
+            />
 
-            <div className="mt-3 space-y-3">
+            <div className="flat-divider">
               {sampleMembers.map((member) => (
                 <MemberCard key={member.id} {...member} compact />
               ))}
@@ -121,24 +114,23 @@ export function HeroSection() {
         </div>
       </section>
 
-      <section className="mt-8 grid gap-4 sm:grid-cols-3">
-        {heroGallery.map((item) => (
-          <figure
-            key={item.caption}
-            className="overflow-hidden rounded-xl border border-[var(--line)] bg-white"
-          >
-            <img
-              src={item.src}
-              alt={item.alt}
-              className="aspect-[4/3] w-full object-cover"
-              loading="lazy"
-              decoding="async"
-            />
-            <figcaption className="border-t border-[var(--line)] px-4 py-3 text-sm font-semibold text-[var(--sea-ink)]">
-              {item.caption}
-            </figcaption>
-          </figure>
-        ))}
+      <section className="border-t border-[var(--line)] py-12 sm:py-16">
+        <div className="grid gap-8 sm:grid-cols-3 sm:gap-6">
+          {heroGallery.map((item) => (
+            <figure key={item.caption}>
+              <img
+                src={item.src}
+                alt={item.alt}
+                className="aspect-[4/3] w-full rounded-2xl object-cover"
+                loading="lazy"
+                decoding="async"
+              />
+              <figcaption className="mt-3 text-sm font-medium text-[var(--sea-ink-soft)]">
+                {item.caption}
+              </figcaption>
+            </figure>
+          ))}
+        </div>
       </section>
     </>
   )

@@ -14,7 +14,7 @@ const buttonVariants = cva(
         primary:
           'btn-link border border-[var(--lagoon-deep)] bg-[var(--lagoon-deep)] text-white hover:border-[#1e40af] hover:bg-[#1e40af] active:translate-y-px',
         secondary:
-          'border border-[var(--line)] bg-white text-[var(--sea-ink)] hover:border-[#bfdbfe] hover:bg-[var(--lagoon-light)]',
+          'border-0 bg-transparent text-[var(--sea-ink)] hover:bg-transparent hover:text-[var(--lagoon-deep)]',
         ghost:
           'text-[var(--sea-ink-soft)] hover:bg-[var(--link-bg-hover)] hover:text-[var(--sea-ink)]',
       },
