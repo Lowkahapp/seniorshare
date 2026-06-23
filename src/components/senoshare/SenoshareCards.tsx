@@ -104,19 +104,14 @@ export function TrustPillar({
 }
 
 export function StepCard({
-  step,
   title,
   description,
 }: {
-  step: number
   title: string
   description: string
 }) {
   return (
     <article className="flat-item">
-      <p className="mb-3 text-sm font-bold text-[var(--lagoon-deep)]">
-        Step {step}
-      </p>
       <h3 className="mb-2 text-lg font-semibold leading-snug text-[var(--sea-ink)]">
         {title}
       </h3>

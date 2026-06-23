@@ -55,7 +55,11 @@ function HomePage() {
         </div>
         <div className="steps-grid">
           {howItWorksSteps.map((step) => (
-            <StepCard key={step.step} {...step} />
+            <StepCard
+              key={step.step}
+              title={step.title}
+              description={step.description}
+            />
           ))}
         </div>
       </section>
