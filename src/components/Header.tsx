@@ -19,7 +19,7 @@ export default function Header() {
   return (
     <header className="sticky top-0 z-50 border-b border-[var(--line)] bg-[var(--header-bg)] px-4 backdrop-blur-lg">
       <nav
-        className="page-wrap flex h-16 items-center justify-between gap-4"
+        className="page-wrap grid h-16 grid-cols-[auto_minmax(0,1fr)_auto] items-center gap-3 sm:gap-4"
         aria-label="Main navigation"
       >
         <div className="flex shrink-0 items-center">
@@ -28,16 +28,16 @@ export default function Header() {
             className="inline-flex items-center gap-2 text-sm font-semibold text-[var(--sea-ink)] no-underline"
           >
             <Home className="h-4 w-4 text-[var(--lagoon-deep)]" aria-hidden="true" />
-            SenoShare
+            <span className="hidden sm:inline">SenoShare</span>
           </Link>
         </div>
 
-        <div className="flex min-w-0 flex-1 items-center justify-center gap-4 overflow-x-auto px-1 [-ms-overflow-style:none] [scrollbar-width:none] lg:gap-6 [&::-webkit-scrollbar]:hidden">
+        <div className="flex min-w-0 items-center justify-center gap-4 overflow-visible px-1 sm:flex-wrap sm:gap-x-5 lg:gap-6">
           {navLinks.map(({ to, label }) => (
             <Link
               key={to}
               to={to}
-              className="nav-link shrink-0 whitespace-nowrap text-sm font-semibold"
+              className="nav-link shrink-0 whitespace-nowrap text-sm font-semibold no-underline"
               activeProps={{ className: 'nav-link is-active' }}
             >
               {label}
@@ -56,9 +56,7 @@ export default function Header() {
                 <Link to="/auth/sign-in">Log in</Link>
               </Button>
               <Button variant="primary" size="sm" asChild className="min-w-[7.5rem] shrink-0">
-                <Link to="/onboarding" className="text-white">
-                  Get Started
-                </Link>
+                <Link to="/onboarding">Get Started</Link>
               </Button>
             </>
           ) : null}

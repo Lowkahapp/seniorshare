@@ -100,25 +100,34 @@ body::after {
   display: none;
 }
 
-a {
+a:not(.btn-link) {
   color: var(--lagoon-deep);
   text-decoration-color: rgba(37, 99, 235, 0.35);
   text-decoration-thickness: 1px;
   text-underline-offset: 2px;
 }
 
-a:hover {
+a:not(.btn-link):hover {
   color: #1e40af;
 }
 
-/* Button-styled links must keep their own text color */
+/* Button-styled links */
 a.btn-link {
-  color: inherit;
   text-decoration: none;
 }
 
 a.btn-link:hover {
-  color: inherit;
+  text-decoration: none;
+}
+
+a.btn-link.text-white,
+a.btn-link[class*='bg-[var(--lagoon-deep)]'] {
+  color: #ffffff;
+}
+
+a.btn-link.text-white:hover,
+a.btn-link[class*='bg-[var(--lagoon-deep)]']:hover {
+  color: #ffffff;
 }
 
 code {
