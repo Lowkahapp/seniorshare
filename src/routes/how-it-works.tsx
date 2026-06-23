@@ -53,11 +53,8 @@ function HowItWorksPage() {
           Safety at every layer
         </h2>
         <div className="grid gap-4 sm:grid-cols-2">
-          {trustPillars.map((pillar, index) => (
+          {trustPillars.map((pillar) => (
             <article key={pillar.title} className="island-shell rounded-2xl p-5">
-              <p className="mb-1 text-sm font-bold text-[var(--lagoon-deep)]">
-                Layer {index + 1}
-              </p>
               <h3 className="mb-2 font-semibold text-[var(--sea-ink)]">{pillar.title}</h3>
               <p className="m-0 text-sm text-[var(--sea-ink-soft)]">{pillar.description}</p>
             </article>

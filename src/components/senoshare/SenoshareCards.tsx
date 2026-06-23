@@ -79,20 +79,17 @@ export function MatchCard({
 export function TrustPillar({
   title,
   description,
-  index,
+  index = 0,
 }: {
   title: string
   description: string
-  index: number
+  index?: number
 }) {
   return (
     <article
       className="flat-item rise-in"
       style={{ animationDelay: `${index * 70}ms` }}
     >
-      <p className="mb-3 text-sm font-bold text-[var(--lagoon-deep)]">
-        {String(index + 1).padStart(2, '0')}
-      </p>
       <h3 className="mb-2 text-lg font-semibold leading-snug text-[var(--sea-ink)]">
         {title}
       </h3>
