@@ -1,4 +1,3 @@
-import { BadgeCheck } from 'lucide-react'
 import type { LucideIcon } from 'lucide-react'
 import { Link } from '@tanstack/react-router'
 
@@ -7,8 +6,7 @@ import { cn } from '@/lib/utils'
 
 export function VerifiedBadge({ className }: { className?: string }) {
   return (
-    <Badge variant="accent" className={cn('gap-1', className)}>
-      <BadgeCheck className="h-3 w-3" />
+    <Badge variant="accent" className={cn('shrink-0', className)}>
       Verified
     </Badge>
   )
@@ -32,15 +30,17 @@ type MemberCardProps = {
 export function MemberCard({ name, location, role, details }: MemberCardProps) {
   return (
     <article className="preview-card">
-      <div className="mb-2 flex items-start justify-between gap-3">
-        <p className="font-semibold text-[var(--sea-ink)]">
-          {name} — {location}
-        </p>
-        <VerifiedBadge />
+      <div className="flex items-start gap-4">
+        <VerifiedBadge className="mt-0.5" />
+        <div>
+          <p className="font-semibold text-[var(--sea-ink)]">
+            {name} — {location}
+          </p>
+          <p className="mt-1 text-sm text-[var(--sea-ink-soft)]">
+            {role} · {details}
+          </p>
+        </div>
       </div>
-      <p className="text-sm text-[var(--sea-ink-soft)]">
-        {role} · {details}
-      </p>
     </article>
   )
 }
@@ -54,11 +54,13 @@ export function MatchCard({
 }) {
   return (
     <article className="preview-card">
-      <div className="mb-2">
-        <MatchBadge />
+      <div className="flex items-start gap-4">
+        <MatchBadge className="mt-0.5" />
+        <div>
+          <p className="font-semibold text-[var(--sea-ink)]">{title}</p>
+          <p className="mt-1 text-sm text-[var(--sea-ink-soft)]">{description}</p>
+        </div>
       </div>
-      <p className="font-semibold text-[var(--sea-ink)]">{title}</p>
-      <p className="mt-1 text-sm text-[var(--sea-ink-soft)]">{description}</p>
     </article>
   )
 }
