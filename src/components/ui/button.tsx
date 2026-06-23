@@ -12,7 +12,9 @@ const buttonVariants = cva(
         default:
           'border border-[var(--line)] bg-[var(--lagoon-light)] text-[var(--lagoon-deep)] hover:border-[#bfdbfe] hover:bg-[#dbeafe]',
         primary:
-          'border border-[var(--lagoon-deep)] bg-[var(--lagoon-deep)] !text-white hover:border-[#1e40af] hover:bg-[#1e40af] hover:!text-white active:translate-y-px',
+          'border border-[var(--sea-ink)] bg-[var(--sea-ink)] !text-white hover:border-[#1a3558] hover:bg-[#1a3558] hover:!text-white active:translate-y-px',
+        outline:
+          'border border-[var(--sea-ink)] bg-transparent text-[var(--sea-ink)] hover:bg-[var(--link-bg-hover)]',
         secondary:
           'border-0 bg-transparent text-[var(--sea-ink)] hover:bg-transparent hover:text-[var(--lagoon-deep)]',
         ghost:

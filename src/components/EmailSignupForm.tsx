@@ -1,6 +1,5 @@
 import { useState } from 'react'
 import { Link } from '@tanstack/react-router'
-import { ArrowRight } from 'lucide-react'
 
 import { Button } from '@/components/ui/button'
 import { Input } from '@/components/ui/input'
@@ -38,7 +37,6 @@ export function EmailSignupForm({
         />
         <Button type="submit" variant={buttonVariant} size="lg" className="min-h-12 shrink-0">
           {buttonLabel}
-          <ArrowRight className="h-4 w-4" />
         </Button>
       </div>
       <p className="mt-3 text-sm text-[var(--sea-ink-soft)]">

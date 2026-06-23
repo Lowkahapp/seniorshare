@@ -24,8 +24,10 @@ function HowItWorksPage() {
         {howItWorksSteps.map((step) => (
           <StepCard
             key={step.step}
+            step={step.step}
             title={step.title}
             description={step.description}
+            learnMoreHref={'learnMoreHref' in step ? step.learnMoreHref : undefined}
           />
         ))}
       </section>

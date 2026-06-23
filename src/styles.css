@@ -13,13 +13,19 @@
   --lagoon-deep: #1d4ed8;
   --lagoon-light: #eff6ff;
   --palm: #1d4ed8;
+  --accent-orange: #c45c1a;
+  --accent-orange-soft: #fef3eb;
+  --verified-green: #1a6b45;
+  --verified-green-soft: #e8f5ee;
+  --match-orange: #c45c1a;
+  --match-orange-soft: #fef3eb;
   --sand: #f8fafc;
   --foam: #ffffff;
   --surface: #ffffff;
   --surface-strong: #ffffff;
   --line: #e2e8f0;
   --inset-glint: #ffffff;
-  --kicker: #4a6280;
+  --kicker: #c45c1a;
   --bg-base: #ffffff;
   --header-bg: #ffffff;
   --chip-bg: #f8fafc;
@@ -27,6 +33,7 @@
   --link-bg-hover: #eff6ff;
   --hero-a: transparent;
   --hero-b: transparent;
+  --panel-bg: #f1f5f9;
 }
 
 :root[data-theme="dark"] {
@@ -121,12 +128,11 @@ a.btn-link:hover {
 }
 
 a.btn-link.text-white,
-a.btn-link[class*='bg-[var(--lagoon-deep)]'] {
+a.btn-link[class*='bg-[var(--sea-ink)]'] {
   color: #ffffff;
 }
 
-a.btn-link.text-white:hover,
-a.btn-link[class*='bg-[var(--lagoon-deep)]']:hover {
+a.btn-link[class*='bg-[var(--sea-ink)]']:hover {
   color: #ffffff;
 }
 
@@ -187,6 +193,60 @@ h2.display-title {
 
 .hero-visual-panel {
   animation: rise-in 700ms cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+.hero-preview-panel {
+  border-radius: 1rem;
+  background: var(--panel-bg);
+  padding: 1.25rem;
+}
+
+.preview-card {
+  border: 1px solid var(--line);
+  border-radius: 0.75rem;
+  background: #ffffff;
+  padding: 1rem 1.125rem;
+}
+
+.preview-card + .preview-card {
+  margin-top: 0.75rem;
+}
+
+.feature-card-box {
+  border: 1px solid var(--line);
+  border-radius: 0.75rem;
+  background: #ffffff;
+  padding: 1.5rem;
+  height: 100%;
+}
+
+.step-number {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 2rem;
+  height: 2rem;
+  border-radius: 9999px;
+  background: var(--sea-ink);
+  color: #ffffff;
+  font-size: 0.875rem;
+  font-weight: 700;
+  line-height: 1;
+  margin-bottom: 1rem;
+}
+
+.brand-logo {
+  font-family: "Fraunces", Georgia, serif;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+}
+
+.brand-dot {
+  width: 0.5rem;
+  height: 0.5rem;
+  border-radius: 9999px;
+  background: var(--accent-orange);
+  flex-shrink: 0;
 }
 
 .hero-member-card {
@@ -370,20 +430,14 @@ h2.display-title {
 
 .steps-grid {
   display: grid;
-  align-items: start;
-  gap: 2rem 1.5rem;
+  align-items: stretch;
+  gap: 1.25rem;
   grid-template-columns: 1fr;
 }
 
 @media (min-width: 640px) {
   .steps-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
-  }
-}
-
-@media (min-width: 1024px) {
-  .steps-grid {
-    grid-template-columns: repeat(4, minmax(0, 1fr));
   }
 }
 

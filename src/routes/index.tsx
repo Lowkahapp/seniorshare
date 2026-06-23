@@ -1,5 +1,12 @@
 import { createFileRoute, Link } from '@tanstack/react-router'
-import { ShieldCheck } from 'lucide-react'
+import {
+  FileCheck,
+  HeartHandshake,
+  Lock,
+  Phone,
+  ShieldCheck,
+  UserCheck,
+} from 'lucide-react'
 
 import { HeroSection } from '@/components/senoshare/HeroSection'
 import {
@@ -14,6 +21,8 @@ import {
 
 export const Route = createFileRoute('/')({ component: HomePage })
 
+const trustIcons = [UserCheck, FileCheck, HeartHandshake, Lock, Phone, ShieldCheck]
+
 function HomePage() {
   return (
     <main className="page-wrap px-4 pb-20 pt-6 sm:pt-8">
@@ -21,10 +30,7 @@ function HomePage() {
 
       <section className="page-section" id="trust">
         <div className="mb-12 max-w-2xl">
-          <div className="mb-3 flex items-center gap-2">
-            <ShieldCheck className="h-5 w-5 text-[var(--lagoon-deep)]" />
-            <p className="island-kicker m-0">Trust &amp; Safety Framework</p>
-          </div>
+          <p className="island-kicker mb-3">Trust &amp; Safety Framework</p>
           <h2 className="display-title mb-4 text-3xl font-bold leading-[1.15] text-[var(--sea-ink)] sm:text-4xl">
             Six layers between you and a stranger.
           </h2>
@@ -34,31 +40,30 @@ function HomePage() {
             rushed.
           </p>
         </div>
-        <div className="grid gap-10 sm:grid-cols-2 lg:grid-cols-3 lg:gap-x-12 lg:gap-y-10">
+        <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
           {trustPillars.map((pillar, index) => (
-            <TrustPillar key={pillar.title} {...pillar} index={index} />
+            <TrustPillar
+              key={pillar.title}
+              {...pillar}
+              icon={trustIcons[index]}
+              index={index}
+            />
           ))}
         </div>
       </section>
 
       <section className="page-section" id="how-it-works">
-        <div className="mb-12 flex flex-wrap items-end justify-between gap-4">
-          <div>
-            <p className="island-kicker mb-2">How SenoShare works</p>
-            <h2 className="display-title text-3xl font-bold leading-[1.15] text-[var(--sea-ink)] sm:text-4xl">
-              From profile to partnership
-            </h2>
-          </div>
-          <Button variant="ghost" asChild>
-            <Link to="/how-it-works">Learn more</Link>
-          </Button>
-        </div>
+        <h2 className="display-title mb-10 text-3xl font-bold leading-[1.15] text-[var(--sea-ink)] sm:text-4xl">
+          How SenoShare works
+        </h2>
         <div className="steps-grid">
           {howItWorksSteps.map((step) => (
             <StepCard
               key={step.step}
+              step={step.step}
               title={step.title}
               description={step.description}
+              learnMoreHref={'learnMoreHref' in step ? step.learnMoreHref : undefined}
             />
           ))}
         </div>

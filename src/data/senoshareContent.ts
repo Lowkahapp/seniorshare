@@ -52,9 +52,10 @@ export const howItWorksSteps = [
   },
   {
     step: 4,
-    title: 'Ongoing support',
+    title: 'We support you after the match too.',
     description:
       "From welcome calls to co-living agreements and ongoing support, we're with you long after move-in day.",
+    learnMoreHref: '/how-it-works',
   },
 ] as const
 
